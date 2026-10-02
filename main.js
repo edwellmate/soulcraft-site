@@ -16,9 +16,10 @@ var FORM_ENDPOINT = "";   // Lambda Function URL for the email form
   }
   var bookers = document.querySelectorAll(".js-book");
   for (var i = 0; i < bookers.length; i++) {
-    bookers[i].addEventListener("click", function (e) {
-      e.preventDefault();
-      window.location.href = bookingHref();
+    bookers[i].addEventListener("click", function () {
+      // Rewrite the href at click time so the browser does the navigation
+      // (no-JS fallback stays #quick-win).
+      this.setAttribute("href", bookingHref());
     });
   }
 

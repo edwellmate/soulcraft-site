@@ -277,3 +277,22 @@ html{scroll-padding-top:72px}
 .path h2 .badge{font-size:.7rem;letter-spacing:.08em;transform:translateY(.15em)}
 .path__text p{max-width:36rem}
 @media (min-width:860px){.path{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:3.5rem}.path__logo{justify-self:center}}
+
+/* ---------- join ---------- */
+.join{max-width:40rem}
+.join .section-head{margin-bottom:1.5rem}
+.join .field{max-width:32rem}
+
+/* ---------- footer columns ---------- */
+.footer__grid{display:grid;gap:2rem 1.5rem;grid-template-columns:repeat(2,minmax(0,1fr))}
+.footer__col{min-width:0;overflow-wrap:anywhere}
+.footer__col ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.footer__col .eyebrow{margin-bottom:1rem}
+.footer__col a{text-decoration:none}
+.footer__col a:hover{text-decoration:underline}
+.footer__col .iconlink:hover{text-decoration:none}
+.site-footer .muted{color:var(--on-dark-muted)}
+.footer__legal{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(244,238,230,.14)}
+.footer__legal p{margin:0}
+.footer__brand img{height:28px;width:auto}
+@media (min-width:860px){.footer__grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
