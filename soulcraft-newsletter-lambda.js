@@ -39,10 +39,13 @@ exports.handler = async (event) => {
 
   // Accept JSON or form-encoded.
   let email = '';
+  let source = 'join';
   try {
     const ct = (headerVal(event, 'content-type') || '').toLowerCase();
     if (ct.includes('application/json')) {
-      email = ((JSON.parse(raw).email) || '').toString().trim();
+      var parsed = JSON.parse(raw);
+      email = ((parsed.email) || '').toString().trim();
+      source = ((parsed.source) || 'join').toString().slice(0, 40);
     } else {
       email = (new URLSearchParams(raw).get('email') || '').toString().trim();
     }
@@ -74,7 +77,7 @@ exports.handler = async (event) => {
   }
 
   if (r.ok) {
-    await notify(email);
+    await notify(email, source);
     return json(200, { ok: true });
   }
 
@@ -102,7 +105,7 @@ exports.handler = async (event) => {
 
 // Optional signup notification via SNS → emails whoever is subscribed to the
 // topic (e.g. contact@wellmate.me). Never fails the signup if it errors.
-async function notify(email) {
+async function notify(email, source) {
   const TopicArn = process.env.NOTIFY_TOPIC_ARN;
   if (!TopicArn) return;
   try {
@@ -111,7 +114,7 @@ async function notify(email) {
     await sns.send(new PublishCommand({
       TopicArn,
       Subject: 'New Soulcraft subscriber',
-      Message: `New newsletter signup on soulcraft.me:\n\n${email}\n\nAdded to group: ${SENDER_GROUP_ID}`,
+      Message: `New signup on soulcraft.me (${source}):\n\n${email}\n\nAdded to group: ${SENDER_GROUP_ID}`,
     }));
   } catch (_) { /* notification is best-effort */ }
 }
