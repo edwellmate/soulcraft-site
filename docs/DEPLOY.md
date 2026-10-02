@@ -45,9 +45,10 @@ same region for Lambda.
      to match the file. The code uses `exports.handler` = CommonJS, so `index.js`.)
 4. **Configuration → Environment variables** → Edit → add:
    - `SENDER_TOKEN` = your **new** Sender API token  *(required)*
-   - `SENDER_GROUP_ID` = `b8zpn3` to feed the existing Behind The Practice group
-     (default, keeps one list), or a new Soulcraft group id (Sender → Audience →
-     Groups → open the group → id is in the URL)
+   - `SENDER_GROUP_ID` = `b8zpn3` — the existing Behind The Practice group.
+     **Decided 2026-10-03: one list for everything** (podcast, Soulcraft, Path
+     Collective — one newsletter with three sections, same audience). The `source`
+     field in the SNS note records where each person signed up.
    - `NOTIFY_TOPIC_ARN` = the SNS topic already used by `btp-newsletter` *(optional)*
 5. **Configuration → Function URL** → **Create function URL**
    - Auth type: **NONE**
