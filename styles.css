@@ -1,0 +1,161 @@
+/* soulcraft.me — v1 "Eucalyptus & dusty rose" (docs/BRAND.md) */
+
+:root{
+  --euc:        #4E7D7A;  /* primary: rules, icons, numerals, arcs */
+  --euc-deep:   #3B605E;  /* links, eyebrow, button fill (darkened from #3C6361 for AA on pebble) */
+  --night:      #343A56;  /* dark sections (stance, podcast) */
+  --night-deep: #282D45;  /* footer, dark gradients */
+  --rose:       #D4A09A;  /* accent: badge, highlights, eyebrow on dark */
+  --rose-deep:  #B9807A;  /* rose text on light if contrast needs it */
+  --pebble:     #DCD3C0;  /* alternate section bg, cards on bone */
+  --sand:       #E9E1D2;  /* lighter alternate, form fields */
+  --bone:       #F4EEE6;  /* page background */
+  --white:      #FBF8F3;  /* card surface on pebble/sand */
+  --ink:        #27312F;  /* headings, body on light */
+  --stone:      #525B59;  /* muted text, captions (darkened from #5E6866 for AA on sand/pebble) */
+  --hair:       rgba(39,49,47,.12); /* hairlines */
+  --on-dark:    #F4EEE6;  /* text on night/euc */
+  --on-dark-muted: rgba(244,238,230,.72);
+
+  --display: "Literata", Georgia, serif;
+  --body: "Karla", system-ui, sans-serif;
+  --maxw: 1120px;
+  --gutter: 16px;
+  --radius: 14px;
+  --ease: 180ms ease;
+}
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{color-scheme:light;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--bone);color:var(--ink);
+  font-family:var(--body);font-size:1.0625rem;line-height:1.6;
+  font-feature-settings:"kern";-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+h1,h2,h3,h4{margin:0 0 .5em;font-weight:500;line-height:1.15;text-wrap:balance}
+h1,h2{font-family:var(--display);font-variation-settings:"opsz" 72}
+h1{font-size:clamp(2.2rem,5.5vw,3.5rem);line-height:1.1;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3.6vw,2.4rem);letter-spacing:-.005em}
+h3{font-family:var(--body);font-size:1.2rem;font-weight:600;line-height:1.3}
+p,ul,ol{margin:0 0 1em}
+ul,ol{padding-left:1.25em}
+small,.small{font-size:.875rem}
+em{font-family:var(--display);font-style:italic;font-variation-settings:"opsz" 72}
+strong{font-weight:600}
+a{color:var(--euc-deep);text-decoration-thickness:1px;text-underline-offset:.15em;transition:color var(--ease)}
+a:hover{color:var(--ink)}
+:focus-visible{outline:3px solid var(--rose);outline-offset:2px;border-radius:4px}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;padding:0;margin:-1px}
+
+/* ---------- layout ---------- */
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.section{padding-block:clamp(3.5rem,8vw,6rem)}
+.section--bone{background:var(--bone)}
+.section--sand{background:var(--sand)}
+.section--pebble{background:var(--pebble)}
+.section--white{background:var(--white)}
+.section--night{background:var(--night);color:var(--on-dark)}
+.section--night a{color:var(--on-dark)}
+.section--night a:hover{color:var(--rose)}
+.section--night :focus-visible{outline-color:var(--rose)}
+.section-head{max-width:40rem;margin-bottom:clamp(2rem,4vw,3rem)}
+.section-head p{color:var(--stone);margin:0}
+.section--night .section-head p{color:var(--on-dark-muted)}
+.grid{display:grid;gap:1.25rem}
+@media (min-width:620px){.grid--2,.grid--4{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:860px){.grid--3{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:1080px){.grid--4{grid-template-columns:repeat(4,1fr)}}
+
+/* eyebrow — Karla 600, 22 px rule before (family trait) */
+.eyebrow{
+  display:flex;align-items:center;gap:.6rem;margin:0 0 .9rem;
+  font-family:var(--body);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--euc-deep);
+}
+.eyebrow::before{content:"";flex:0 0 22px;height:1.5px;background:var(--euc)}
+.section--night .eyebrow,.site-footer .eyebrow{color:var(--rose)}
+.section--night .eyebrow::before,.site-footer .eyebrow::before{background:var(--rose)}
+.muted{color:var(--stone)}
+.section--night .muted{color:var(--on-dark-muted)}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:48px;padding:.7rem 1.4rem;border-radius:999px;border:1.5px solid transparent;
+  font:600 1rem/1.2 var(--body);text-decoration:none;cursor:pointer;white-space:nowrap;
+  transition:background-color var(--ease),color var(--ease),transform var(--ease),border-color var(--ease);
+}
+.btn--primary{background:var(--euc-deep);border-color:var(--euc-deep);color:var(--bone)}
+.btn--primary:hover{background:color-mix(in srgb,var(--euc-deep) 82%,var(--night));border-color:transparent;color:var(--bone);transform:translateY(-2px)}
+.btn--secondary{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn--secondary:hover{background:color-mix(in srgb,var(--ink) 8%,transparent);color:var(--ink);transform:translateY(-2px)}
+.section--night .btn--secondary{border-color:var(--on-dark);color:var(--on-dark)}
+.btn:focus-visible{outline:3px solid var(--rose);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.btn:hover{transform:none}}
+
+/* ---------- cards ---------- */
+.card{
+  background:var(--sand);border:1px solid var(--hair);border-radius:var(--radius);
+  box-shadow:0 1px 0 var(--hair);padding:1.5rem;
+}
+.section--sand .card,.section--pebble .card{background:var(--white)}
+.section--white .card{background:var(--bone)}
+.card > :last-child{margin-bottom:0}
+
+/* ---------- forms ---------- */
+.field{display:flex;flex-wrap:wrap;gap:.6rem}
+.field input{
+  flex:1 1 14rem;min-height:48px;padding:.6rem .95rem;border-radius:10px;
+  border:1px solid var(--hair);background:var(--sand);color:var(--ink);
+  font:400 1rem var(--body);
+}
+.section--sand .field input,.card .field input{background:var(--white)}
+.field input::placeholder{color:var(--stone)}
+.field input:focus-visible{outline:3px solid var(--euc);outline-offset:1px}
+.form-msg{min-height:1.5em;margin:.6rem 0 0;font-size:.95rem;color:var(--stone)}
+.form-msg:empty{margin:0}
+
+/* ---------- nav ---------- */
+.site-nav{
+  position:sticky;top:0;z-index:50;background:var(--bone);border-bottom:1px solid var(--hair);
+}
+.site-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:64px}
+.brand{display:inline-flex;align-items:center;color:var(--ink);text-decoration:none;font-family:var(--display);font-size:1.6rem;font-weight:500;letter-spacing:-.01em;line-height:1}
+.brand img{height:26px;width:auto}
+.nav-toggle{
+  display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.4rem .8rem;margin-right:-.5rem;
+  border:0;background:transparent;color:var(--ink);font:600 .95rem var(--body);cursor:pointer;border-radius:999px;
+}
+.nav-toggle svg{width:22px;height:22px}
+.nav-toggle .ico-close{display:none}
+.nav-open .nav-toggle .ico-close{display:block}
+.nav-open .nav-toggle .ico-menu{display:none}
+.nav-menu{
+  display:none;position:absolute;left:0;right:0;top:100%;
+  background:var(--bone);border-bottom:1px solid var(--hair);padding:.5rem var(--gutter) 1.25rem;
+}
+.nav-open .nav-menu{display:block}
+.nav-menu ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.25rem}
+.nav-menu a:not(.btn){display:block;padding:.6rem .25rem;color:var(--ink);text-decoration:none;font-weight:500}
+.nav-menu a:not(.btn):hover{color:var(--euc-deep)}
+.nav-menu .btn{margin-top:.75rem;width:100%}
+@media (min-width:860px){
+  .nav-toggle{display:none}
+  .nav-menu{display:flex;position:static;border:0;padding:0;background:transparent}
+  .nav-menu ul{flex-direction:row;align-items:center;gap:1.5rem}
+  .nav-menu .btn{margin:0 0 0 .5rem;width:auto}
+  .nav-menu a:not(.btn){padding:.3rem 0}
+}
+
+/* ---------- footer ---------- */
+.site-footer{
+  background:linear-gradient(180deg,var(--night) 0%,var(--night-deep) 40%);
+  color:var(--on-dark);padding-block:clamp(3rem,6vw,4.5rem) 2rem;
+}
+.site-footer a{color:var(--on-dark)}
+.site-footer a:hover{color:var(--rose)}
