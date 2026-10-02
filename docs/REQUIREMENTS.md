@@ -27,25 +27,25 @@ All copy comes from [CONTENT.md](CONTENT.md) verbatim. The agent decides layout 
 
 | # | Section | id | Background | Notes |
 |---|---|---|---|---|
-| 0 | Nav (sticky) | — | linen, hairline | Logo left; links: Services · Work · Podcast · About; CTA button "Book a Quick-Win Session" → `#quick-win`. Mobile: hamburger toggling a class, no JS framework. |
-| 1 | Hero | `#top` | linen | H1 + sub + primary CTA (→ `#quick-win`) + secondary text link (→ `#how`). Soft concentric arcs decoration (BRAND.md §6) right side, hidden < 860 px. |
-| 2 | The stance | `#why` | moss (dark) | 3 short columns: Start small · Build on what you own · Stay around. |
+| 0 | Nav (sticky) | — | bone, hairline | Logo left; links: Services · Work · Podcast · About; CTA button "Book a Quick-Win Session" → `#quick-win`. Mobile: hamburger toggling a class, no JS framework. |
+| 1 | Hero | `#top` | bone | H1 + sub + primary CTA (→ `#quick-win`) + secondary text link (→ `#how`). Soft concentric arcs decoration (BRAND.md §6) right side, hidden < 860 px. |
+| 2 | The stance | `#why` | night (dark) | 3 short columns: Start small · Build on what you own · Stay around. |
 | 3 | Quick-Win Session | `#quick-win` | sand | The one card with a price. Price, duration, "what you leave with" list, the credit line, the booking flow (§5), and the "not sure yet?" line. |
-| 4 | Services | `#services` | linen | 4 cards: AI assistants & automations · Right-size your tech stack · Tech Care · AI learning (coming soon — this card has an inline email capture, see §6). |
+| 4 | Services | `#services` | bone | 4 cards: AI assistants & automations · Right-size your tech stack · Tech Care · AI learning (coming soon — this card has an inline email capture, see §6). |
 | 5 | Work | `#work` | white | 2 anonymised stories, each: Situation → What we did first → What's next. No client names, no logos, no exact prices. |
-| 6 | How it works | `#how` | sand | 3 numbered steps. |
-| 7 | Podcast | `#podcast` | moss (dark) | Behind The Practice: eyebrow, paragraph, the three embeds (copied from `docs/_wellmate-episodes-section.html` — keep the iframe attributes exactly), "Be a guest" line with email + Instagram DM. |
-| 8 | About | `#about` | linen | Portrait + the three hats (Soulcraft founder · podcast host · Path Collective co-founder & CPO) each with its link; Instagram handle with icon. |
+| 6 | How it works | `#how` | pebble | 3 numbered steps. |
+| 7 | Podcast | `#podcast` | night (dark) | Behind The Practice: eyebrow, paragraph, the three embeds (copied from `docs/_wellmate-episodes-section.html` — keep the iframe attributes exactly), "Be a guest" line with email + Instagram DM. |
+| 8 | About | `#about` | bone | Portrait + the three hats (Soulcraft founder · podcast host · Path Collective co-founder & CPO) each with its link; Instagram handle with icon. |
 | 9 | Path Collective | `#path` | white | Logo (`assets/path-collective-logo.png`), "Launching soon in Australia" badge, 2 sentences, link. |
 | 10 | Stay in touch | `#join` | sand | Email form (§6). |
-| 11 | Footer | — | bark | 4 columns: Soulcraft (services/work/book) · Podcast (listen links) · Elsewhere (Wellmate, Path Collective, Instagram) · Contact. Legal line: `© 2026 MBS Unity Pty Ltd · soulcraft.me`. |
+| 11 | Footer | — | night-deep | 4 columns: Soulcraft (services/work/book) · Podcast (listen links) · Elsewhere (Wellmate, Path Collective, Instagram) · Contact. Legal line: `© 2026 MBS Unity Pty Ltd · soulcraft.me`. |
 
 ## 4. Head / SEO
 
 - `<title>Soulcraft · Technology that supports the work you actually do</title>`
 - Meta description, OG (`og:type website`, `og:site_name soulcraft.me`, `og:url https://www.soulcraft.me/`, `og:image /assets/og.png` 1200×630 generated in the palette), Twitter `summary_large_image`.
 - `<link rel="canonical" href="https://www.soulcraft.me/">`
-- Favicon: `assets/favicon.svg` + `assets/apple-touch-icon.png` (180 px) from the logo mark.
+- Favicon: `assets/favicon.svg` + `assets/apple-touch-icon.png` (180 px) from the favicon tile (BRAND.md §5).
 - JSON-LD: one `ProfessionalService` (name Soulcraft, founder Person Eduardo Rivas, areaServed AU, url, sameAs: Instagram, wellmate.me, pathcollective.com) with an `Offer` for the Quick-Win Session (`price 149`, `priceCurrency AUD`). Plus the `PodcastSeries` block ported from wellmate.me's head (lines 20–57 of its `index.html`) with `url` updated to `https://www.soulcraft.me/#podcast`.
 
 ## 5. Booking flow (Quick-Win Session)
