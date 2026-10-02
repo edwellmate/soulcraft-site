@@ -6,6 +6,22 @@ var FORM_ENDPOINT = "";   // Lambda Function URL for the email form
 (function () {
   "use strict";
 
+  /* ---- booking: Stripe → TidyCal → mailto (REQUIREMENTS §5) ---- */
+  var MAILTO = "mailto:eduardo@wellmate.me";
+  function bookingHref() {
+    if (STRIPE_LINK) return STRIPE_LINK;
+    if (TIDYCAL_URL) return TIDYCAL_URL;
+    return MAILTO + "?subject=" + encodeURIComponent("Quick-Win Session") +
+      "&body=" + encodeURIComponent("Hi Eduardo,\n\nI'd like to book a Quick-Win Session. Here's a little about how I run things:\n\n");
+  }
+  var bookers = document.querySelectorAll(".js-book");
+  for (var i = 0; i < bookers.length; i++) {
+    bookers[i].addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = bookingHref();
+    });
+  }
+
   /* ---- mobile nav ---- */
   var nav = document.querySelector(".site-nav");
   var toggle = document.querySelector(".nav-toggle");
