@@ -28,7 +28,7 @@ All copy comes from [CONTENT.md](CONTENT.md) verbatim. The agent decides layout 
 | # | Section | id | Background | Notes |
 |---|---|---|---|---|
 | 0 | Nav (sticky) | — | linen, hairline | Logo left; links: Services · Work · Podcast · About; CTA button "Book a Quick-Win Session" → `#quick-win`. Mobile: hamburger toggling a class, no JS framework. |
-| 1 | Hero | `#top` | linen | H1 + sub + primary CTA (→ `#quick-win`) + secondary text link (→ `#how`). A quiet decorative mark (seed/sprout rings) right side, hidden < 860 px. |
+| 1 | Hero | `#top` | linen | H1 + sub + primary CTA (→ `#quick-win`) + secondary text link (→ `#how`). Soft concentric arcs decoration (BRAND.md §6) right side, hidden < 860 px. |
 | 2 | The stance | `#why` | moss (dark) | 3 short columns: Start small · Build on what you own · Stay around. |
 | 3 | Quick-Win Session | `#quick-win` | sand | The one card with a price. Price, duration, "what you leave with" list, the credit line, the booking flow (§5), and the "not sure yet?" line. |
 | 4 | Services | `#services` | linen | 4 cards: AI assistants & automations · Right-size your tech stack · Tech Care · AI learning (coming soon — this card has an inline email capture, see §6). |
@@ -77,7 +77,7 @@ Same contract as wellmate.me (`docs/_wellmate-DEPLOY.md`, `soulcraft-newsletter-
 
 ## 7. Assets the agent must produce
 
-- `assets/logo.svg` — wordmark + mark (brief in BRAND.md §5). Also `assets/mark.svg`, `assets/favicon.svg`, `assets/apple-touch-icon.png`.
+- `assets/logo.svg` + `assets/logo-on-dark.svg` — outlined wordmark (BRAND.md §5). Also `assets/favicon.svg`, `assets/apple-touch-icon.png`.
 - `assets/og.png` 1200×630 — mark + wordmark + tagline on linen (render the SVG with a headless browser or `sharp`/`resvg` via `npx`; commit the PNG).
 - Icons: inline SVG, one consistent set (BRAND.md §4). Social icons for Spotify, Apple Podcasts, YouTube, Instagram may be ported from wellmate.me's hero (`docs/_wellmate-episodes-section.html` and the wellmate repo `index.html:361–364`).
 - `assets/path-collective-logo.png` and `assets/portrait.jpg` are provided.
