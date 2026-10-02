@@ -159,3 +159,25 @@ a:hover{color:var(--ink)}
 }
 .site-footer a{color:var(--on-dark)}
 .site-footer a:hover{color:var(--rose)}
+
+/* ---------- hero ---------- */
+html{scroll-padding-top:72px}
+.hero{padding-block:clamp(3.5rem,9vw,7rem)}
+.hero__grid{display:grid;gap:2rem;align-items:center}
+.hero__text{max-width:38rem}
+.hero__sub{font-size:clamp(1.125rem,1.6vw,1.25rem);color:var(--stone);max-width:34rem;margin:1.25rem 0 2rem}
+.hero__actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem}
+.hero__secondary{font-weight:500}
+.hero__art{display:none}
+@media (min-width:860px){
+  .hero__grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .hero__art{display:block;justify-self:end;width:min(100%,420px);aspect-ratio:1}
+  .arcs{width:100%;height:100%;transform-origin:50% 50%;animation:breathe 10s ease-in-out infinite}
+}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+@media (prefers-reduced-motion:reduce){.arcs{animation:none}}
+
+/* ---------- stance ---------- */
+.stance{gap:2rem 2.5rem}
+.stance h3{color:var(--rose);font-family:var(--display);font-weight:500;font-size:1.45rem;margin-bottom:.4rem}
+.stance p{color:var(--on-dark);margin:0;max-width:30rem}
