@@ -181,3 +181,39 @@ html{scroll-padding-top:72px}
 .stance{gap:2rem 2.5rem}
 .stance h3{color:var(--rose);font-family:var(--display);font-weight:500;font-size:1.45rem;margin-bottom:.4rem}
 .stance p{color:var(--on-dark);margin:0;max-width:30rem}
+
+/* ---------- icons ---------- */
+.ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.ico--brand{fill:currentColor;stroke:none}
+.iconlink{display:inline-flex;align-items:center;gap:.45rem;text-decoration:none}
+.iconlink:hover span{text-decoration:underline}
+.iconlink .ico{width:20px;height:20px}
+
+/* ---------- quick-win ---------- */
+.qw{padding:clamp(1.5rem,4vw,2.75rem);display:grid;gap:2rem}
+.qw__price{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem;margin-bottom:1rem}
+.qw__amount{font-family:var(--display);font-weight:500;font-size:clamp(2.4rem,5vw,3.25rem);line-height:1;letter-spacing:-.02em;font-variation-settings:"opsz" 72}
+.qw__meta{font-weight:500;color:var(--stone)}
+.qw__intro{font-size:1.125rem;max-width:36rem}
+.qw__label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--euc-deep);margin:1.5rem 0 .6rem}
+.qw__list{padding-left:1.2em}
+.qw__list li{margin-bottom:.5rem}
+.qw__list li::marker{color:var(--euc)}
+.qw__side{display:flex;flex-direction:column;gap:.9rem;padding:1.5rem;border-radius:12px;background:var(--sand)}
+.qw__side > *{margin:0}
+.qw__credit{font-family:var(--display);font-style:italic;font-variation-settings:"opsz" 72;font-size:1.1rem}
+.qw__side .btn{align-self:flex-start;margin-top:.25rem}
+.qw__hi{margin-top:.25rem}
+@media (min-width:860px){
+  .qw{grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:start}
+  .qw__side{position:sticky;top:88px}
+}
+
+/* ---------- services ---------- */
+.service{display:flex;flex-direction:column;gap:.75rem}
+.service__ico{color:var(--euc);width:28px;height:28px;margin-bottom:.25rem}
+.service h3{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
+.service p{margin:0;color:var(--ink)}
+.badge{display:inline-block;padding:.15rem .6rem;border-radius:999px;background:var(--rose);color:var(--ink);font:600 .7rem/1.6 var(--body);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.service--soon .field{margin-top:auto;padding-top:.5rem}
+.service--soon .field input{flex-basis:9rem}

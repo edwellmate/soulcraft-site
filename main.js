@@ -22,6 +22,71 @@ var FORM_ENDPOINT = "";   // Lambda Function URL for the email form
     });
   }
 
+  /* ---- email forms: #sc-signup (join) + #sc-signup-ai (ai-learning) (REQUIREMENTS §6) ---- */
+  var MSG_OK = "You\u2019re in. Talk soon.";
+  var MSG_ALREADY = "You\u2019re already on the list.";
+  var MSG_ERR = "That didn\u2019t go through \u2014 email me instead at ";
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function setMsg(el, text, isErr) {
+    if (!el) return;
+    el.textContent = text;
+    if (isErr) {
+      var a = document.createElement("a");
+      a.href = MAILTO;
+      a.textContent = "eduardo@wellmate.me";
+      el.appendChild(a);
+      el.appendChild(document.createTextNode("."));
+    }
+  }
+
+  function handleSignup(form) {
+    var input = form.querySelector("input[type=email]");
+    var button = form.querySelector("button");
+    var msg = document.getElementById(form.id + "-msg");
+    var source = form.getAttribute("data-source") || "join";
+    var email = (input.value || "").trim();
+
+    if (!EMAIL_RE.test(email)) {
+      setMsg(msg, "Please enter a valid email address.");
+      input.focus();
+      return;
+    }
+    if (!FORM_ENDPOINT) {
+      window.location.href = MAILTO + "?subject=" + encodeURIComponent("Keep me posted") +
+        "&body=" + encodeURIComponent("Please add " + email + " to the list (" + source + ").");
+      return;
+    }
+    button.disabled = true;
+    setMsg(msg, "");
+    fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email, source: source })
+    }).then(function (r) {
+      return r.json().then(function (data) { return { ok: r.ok, data: data }; });
+    }).then(function (res) {
+      if (res.ok && res.data && res.data.ok) {
+        setMsg(msg, res.data.already ? MSG_ALREADY : MSG_OK);
+        if (!res.data.already) form.reset();
+      } else {
+        setMsg(msg, MSG_ERR, true);
+      }
+    }).catch(function () {
+      setMsg(msg, MSG_ERR, true);
+    }).then(function () {
+      button.disabled = false;
+    });
+  }
+
+  var forms = document.querySelectorAll(".js-signup");
+  for (var f = 0; f < forms.length; f++) {
+    forms[f].addEventListener("submit", function (e) {
+      e.preventDefault();
+      handleSignup(this);
+    });
+  }
+
   /* ---- mobile nav ---- */
   var nav = document.querySelector(".site-nav");
   var toggle = document.querySelector(".nav-toggle");
