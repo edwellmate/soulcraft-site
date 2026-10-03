@@ -254,10 +254,10 @@ html{scroll-padding-top:72px}
 .guest li::marker{color:var(--euc)}
 
 /* ---------- about ---------- */
-.about{display:grid;gap:3rem;align-items:center}
-.about__media{max-width:400px;margin-inline:auto;width:100%}
-.portrait{position:relative;padding:1.5rem 1.5rem 0 0}
-.portrait__arcs{position:absolute;right:0;top:0;width:62%;height:auto;z-index:0}
+.about{display:grid;gap:3rem;align-items:start}
+.about__media{max-width:440px;margin-inline:auto;width:100%}
+.portrait{position:relative;padding:1.75rem 1.75rem 0 0}
+.portrait__arcs{position:absolute;right:0;top:0;width:70%;height:auto;z-index:0}
 .portrait img{
   position:relative;z-index:1;width:100%;height:auto;display:block;
   border-radius:999px 999px var(--radius) var(--radius);
@@ -278,8 +278,8 @@ html{scroll-padding-top:72px}
 .about__close .btn .ico{width:18px;height:18px}
 @media (min-width:620px){.hat{grid-template-columns:minmax(0,11rem) 1fr;align-items:start}}
 @media (min-width:860px){
-  .about{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4rem}
-  .about__media{position:sticky;top:96px;margin:0}
+  .about{grid-template-columns:minmax(0,6fr) minmax(0,7fr);gap:4rem;align-items:start}
+  .about__media{position:sticky;top:96px;margin:0;max-width:none}
 }
 
 /* ---------- path collective ---------- */
