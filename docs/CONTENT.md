@@ -8,7 +8,7 @@ Contact email for v1: `eduardo@soulcraft.me` · Instagram: `https://www.instagra
 
 ## Nav
 
-Services · AI learning · Podcast · About (no button in the header)
+Consulting · AI learning · Podcast · About (no button in the header)
 
 ## Hero (`#top`)
 
@@ -145,7 +145,7 @@ Messages: success "You're in. Talk soon." · already "You're already on the list
 
 ## Footer
 
-Column Soulcraft: Services · Book a session
+Column Consulting · Soulcraft: Book a Quick-Win Session · IT consulting · AI learning
 Column Podcast: Spotify · Apple Podcasts · YouTube
 Column Elsewhere: Path Collective (pathcollective.com) · Instagram
 Column Contact: eduardo@soulcraft.me · Melbourne, Australia
