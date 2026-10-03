@@ -125,7 +125,8 @@ Eyebrow: Also from this village
 
 H2: Path Collective
 
-Badge: Soft launch underway
+Badge: Soft launch running, invite only
+Phase line: The soft launch is already running with our first founding facilitators and ambassadors. Access is by invitation only for now; the waitlist is how you get one. Public launch in Australia early 2027.
 
 P: Soulcraft is where I help you with your tools. Path Collective is where people find you: a curated platform to discover and book trusted wellness events, retreats and facilitators. Our first founding facilitators and ambassadors are joining now for the soft launch; public launch in Australia early 2027.
 
