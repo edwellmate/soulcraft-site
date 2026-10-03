@@ -23,7 +23,7 @@ You are building a small static website unattended. Ed reviews in the morning. W
 ## 2. Decisions
 - **Decide yourself (Tier A):** layout, spacing, icon choice, SVG shapes, image sizing, font weights, order of footer links, tooling.
 - **Decide and flag (Tier B):** anything in BRAND.md that fails a contrast check (darken the token, record old/new), copy punctuation for layout.
-- **Park (Tier C):** new sentences or claims, prices, legal wording, anything about Stripe/TidyCal/Sender/AWS/DNS accounts, contact email changes. Build around it, leave a numbered question on the issue, label `night-shift:parked`, keep going.
+- **Park (Tier C):** new sentences or claims, prices, legal wording, anything about Stripe/Microsoft Bookings/Sender/AWS/DNS accounts, contact email changes. Build around it, leave a numbered question on the issue, label `night-shift:parked`, keep going.
 
 ## 3. Report (end of run, or hard stop at 09:00 Melbourne)
 In the report issue: queue → per-issue outcome (merged PR link / parked + questions) → quality gate results (validator, contrast table, Lighthouse four scores for mobile and desktop) → screenshots at 360/768/1280 (upload via `gh issue comment --body-file` with images attached, or commit nothing and paste the Playwright output paths plus a note) → **Morning checklist for Ed** (copy the `night-shift:skip` issues in order) → open questions numbered, each with your recommended default.
