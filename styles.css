@@ -3,7 +3,7 @@
 :root{
   --euc:        #4E7D7A;  /* primary: rules, icons, numerals, arcs */
   --euc-deep:   #3B605E;  /* links, eyebrow, button fill (darkened from #3C6361 for AA on pebble) */
-  --night:      #343A56;  /* dark sections (stance, podcast) */
+  --night:      #343A56;  /* dark sections (services) */
   --night-deep: #282D45;  /* footer, dark gradients */
   --rose:       #D4A09A;  /* accent: badge, highlights, eyebrow on dark */
   --rose-deep:  #B9807A;  /* rose text on light if contrast needs it */
@@ -105,6 +105,10 @@ a:hover{color:var(--ink)}
 }
 .section--sand .card,.section--pebble .card{background:var(--white)}
 .section--white .card{background:var(--bone)}
+.section--night .card{background:var(--white);color:var(--ink)}
+.section--night .card a{color:var(--euc-deep)}
+.section--night .card a:hover{color:var(--ink)}
+.section--night .card .form-msg{color:var(--stone)}
 .card > :last-child{margin-bottom:0}
 
 /* ---------- forms ---------- */
@@ -177,11 +181,6 @@ html{scroll-padding-top:72px}
 @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
 @media (prefers-reduced-motion:reduce){.arcs{animation:none}}
 
-/* ---------- stance ---------- */
-.stance{gap:2rem 2.5rem}
-.stance h3{color:var(--rose);font-family:var(--display);font-weight:500;font-size:1.45rem;margin-bottom:.4rem}
-.stance p{color:var(--on-dark);margin:0;max-width:30rem}
-
 /* ---------- icons ---------- */
 .ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
 .ico--brand{fill:currentColor;stroke:none}
@@ -218,15 +217,9 @@ html{scroll-padding-top:72px}
 .service--soon .field{margin-top:auto;padding-top:.5rem}
 .service--soon .field input{flex-basis:9rem}
 
-/* ---------- work ---------- */
-.stories{gap:1.5rem}
-.story h3{font-family:var(--display);font-weight:500;font-size:1.4rem;margin-bottom:1rem;font-variation-settings:"opsz" 72}
-.story dl{margin:0;display:grid;gap:.9rem}
-.story dt{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--euc-deep);margin-bottom:.2rem}
-.story dd{margin:0}
-.stories__note{margin:1.5rem 0 0}
-
-/* ---------- how it works ---------- */
+/* ---------- what happens next (inside quick-win) ---------- */
+.next{margin-top:clamp(2rem,4vw,3rem)}
+.next__label{margin:0 0 1rem}
 .steps{list-style:none;padding:0;margin:0;counter-reset:step;gap:1.25rem}
 .step{counter-increment:step;padding-top:1.25rem}
 .step::before{
@@ -238,11 +231,16 @@ html{scroll-padding-top:72px}
 
 /* ---------- podcast ---------- */
 .players{gap:1.5rem;align-items:start}
-.player__label{color:var(--rose);font-size:.95rem;margin-bottom:.6rem}
+.player__label{color:var(--euc-deep);font-size:.95rem;margin-bottom:.6rem}
 .player iframe{display:block;width:100%;border:0;background:var(--night-deep);border-radius:14px}
 .player .yt{aspect-ratio:16/9;height:auto;border-radius:14px}
-.guest{max-width:40rem;margin:2.5rem 0 0;color:var(--on-dark)}
-.section--night .guest a{text-decoration-color:var(--rose)}
+.quote{margin:0 0 clamp(2rem,4vw,3rem);padding-left:1.1rem;border-left:3px solid var(--rose);font-family:var(--display);font-variation-settings:"opsz" 72;font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.35;max-width:34rem;color:var(--ink)}
+.quote em{color:var(--euc-deep)}
+.guest{max-width:40rem;margin:clamp(2.5rem,5vw,3.5rem) 0 0}
+.guest h3{font-family:var(--display);font-weight:500;font-size:1.4rem;font-variation-settings:"opsz" 72;margin-bottom:.4rem}
+.guest ul{padding-left:1.2em;margin:.75rem 0 1rem}
+.guest li{margin-bottom:.4rem}
+.guest li::marker{color:var(--euc)}
 
 /* ---------- about ---------- */
 .about{display:grid;gap:2.5rem;align-items:start}
@@ -282,6 +280,7 @@ html{scroll-padding-top:72px}
 .join{max-width:40rem}
 .join .section-head{margin-bottom:1.5rem}
 .join .field{max-width:32rem}
+.join__note{margin:.5rem 0 0}
 
 /* ---------- footer columns ---------- */
 .footer__grid{display:grid;gap:2rem 1.5rem;grid-template-columns:repeat(2,minmax(0,1fr))}

@@ -8,7 +8,7 @@ Contact email for v1: `eduardo@wellmate.me` · Instagram: `https://www.instagram
 
 ## Nav
 
-Services · Work · Podcast · About · **Book a Quick-Win Session**
+Services · Podcast · About · **Book a Quick-Win Session**
 
 ## Hero (`#top`)
 
@@ -19,23 +19,14 @@ H1: **Technology that supports the work you actually do.**
 Sub: I help facilitators, community builders and small practices make their tools work for them — starting with one small, useful thing, and growing from there.
 
 Primary CTA: Book a Quick-Win Session — $149
-Secondary: See how it works ↓
+Secondary: I also host the Behind The Practice podcast ↓ (→ #podcast)
 
-## The stance (`#why`)
-
-Eyebrow: How I work
-
-H2: Genuinely useful now. A partner for later.
-
-Column 1 — **Start small.** The first step is always the smallest thing that makes next week easier. Not a 40-page plan.
-Column 2 — **Build on what you own.** Most practices already pay for more than they use. We make that work first, and only add a tool when it has earned its place.
-Column 3 — **Stay around.** Tech is never "done". When you're ready for more, I'm the same person on the other end of the message.
 
 ## Quick-Win Session (`#quick-win`)
 
 Eyebrow: Start here
 
-H2: The Quick-Win Session
+H2: Start with a Quick-Win Session
 
 Price line: **$149** · 60 minutes · online or in Melbourne
 
@@ -53,11 +44,16 @@ Flow line: Pay, then pick a time that suits you. Sessions run Monday to Wednesda
 Button: Book a Quick-Win Session
 Below button: Not sure yet? [Say hi] — a message costs nothing.
 
+What happens next (three steps under the card):
+1. **Chat** — Book a Quick-Win Session or just say hi. We talk about how things really run.
+2. **Quick win** — You get one small change you can make this month, and a plain note on what's possible later.
+3. **Grow when you're ready** — If and when you want more, we build it in small, affordable steps — on what you already own.
+
 ## Services (`#services`)
 
-Eyebrow: What I do
+Eyebrow: Services
 
-H2: Four ways I can help
+H2: What I help with
 
 **AI assistants & automations**
 The repetitive research, updates and admin you do by hand — done by a small assistant that lives inside the tools you already use. You review; it does the digging.
@@ -72,33 +68,7 @@ An ongoing partner for the small fixes and small builds that pile up. A few hour
 Practical sessions on using AI in a small practice — without losing the human part. Leave your email and you'll hear first.
 (Inline form: email input + button "Keep me posted".)
 
-## Work (`#work`)
 
-Eyebrow: Recent work
-
-H2: Two small starts
-
-**A facilitator launching her first course**
-*Situation* — A one-woman wellness practice ready to move from 1:1 sessions into an online course, with a website she already paid for and a dozen tool subscriptions suggested by well-meaning friends.
-*What we did first* — Fitted the course, the bookings and the client follow-up inside the platform she already had. New mandatory spend: nothing.
-*What's next* — A small pilot of the course with her existing clients, then an assistant to draft her follow-up emails.
-
-**A studio with 7,500 hand-kept contacts**
-*Situation* — A design studio whose entire new-business engine is a spreadsheet of contacts, updated by hand every year — hundreds of hours of careful work.
-*What we did first* — An AI research assistant that lives in his own spreadsheet, checks public pages for changes and queues them for his review. He stays in charge; it does the looking.
-*What's next* — Run it on one group of contacts, measure it against his manual pass, then decide together.
-
-Footer line of the section: Names kept private. Stories shared with permission.
-
-## How it works (`#how`)
-
-Eyebrow: The path
-
-H2: Three steps, at your pace
-
-1. **Chat** — Book a Quick-Win Session or just say hi. We talk about how things really run.
-2. **Quick win** — You get one small change you can make this month, and a plain note on what's possible later.
-3. **Grow when you're ready** — If and when you want more, we build it in small, affordable steps — on what you already own.
 
 ## Podcast (`#podcast`)
 
@@ -106,11 +76,19 @@ Eyebrow: The podcast
 
 H2: Behind The Practice
 
-Intro: Conversations with wellness facilitators about the practice behind the practice — the careful, quiet work that rarely makes it into a post. Hosted by me, from Melbourne.
+Intro: Conversations with the facilitators and community builders who quietly serve others — their stories of challenge, inspiration and hard-won wisdom. **This is their microphone.**
+
+Pull quote: Heart-led facilitators shouldn't have to become influencers to be heard. *So we give them a room.*
 
 (Embeds: Spotify show · Apple Podcasts · YouTube playlist — attributes copied exactly from `docs/_wellmate-episodes-section.html`.)
 
-Be a guest: If you hold space and care about co-creation, there's a seat here for you. Reach out at [eduardo@wellmate.me] or [send me a message on Instagram].
+Be a guest — H3: Come on the show
+If you hold space and care about co-creation, there's a seat here for you.
+- You've got stories worth telling — of challenge, of inspiration, of what the work has taught you.
+- You do work that's hard to compress into a clip, and you'd rather talk about it properly.
+- You want to be heard for the depth of the practice, not your posting schedule.
+- You're up for an honest, unhurried conversation — no script, no selling.
+Reach out at [eduardo@wellmate.me] or [send me a message on Instagram].
 
 ## About (`#about`)
 
@@ -141,20 +119,21 @@ Link: Visit Path Collective →
 
 ## Stay in touch (`#join`)
 
-Eyebrow: Stay in touch
+Eyebrow: Stay close to the work
 
 H2: One email now and then
 
 P: New episodes, the occasional quick win worth sharing, and first word on the AI sessions. No noise.
 
 Input placeholder: you@example.com · Button: Join
+Note under form: Unsubscribe anytime.
 Messages: success "You're in. Talk soon." · already "You're already on the list." · error "That didn't go through — email me instead at eduardo@wellmate.me."
 
 ## Footer
 
-Column Soulcraft: Services · Work · Book a session
+Column Soulcraft: Services · Book a session
 Column Podcast: Spotify · Apple Podcasts · YouTube
-Column Elsewhere: Wellmate (wellmate.me) · Path Collective (pathcollective.com) · Instagram
+Column Elsewhere: Path Collective (pathcollective.com) · Instagram
 Column Contact: eduardo@wellmate.me · Melbourne, Australia
 
 Legal: © 2026 Eduardo Rivas · soulcraft.me
@@ -164,3 +143,44 @@ Legal: © 2026 Eduardo Rivas · soulcraft.me
 Title: Soulcraft · Technology that supports the work you actually do
 Description: Soulcraft is Eduardo Rivas's tech and AI practice for wellness facilitators, community builders and small practices. Start with a $149 Quick-Win Session.
 OG image text: soulcraft — Technology that supports the work you actually do.
+
+
+---
+
+## Removed in v1.1 (2026-10-03) — kept for reference
+
+## The stance (`#why`)
+
+Eyebrow: How I work
+
+H2: Genuinely useful now. A partner for later.
+
+Column 1 — **Start small.** The first step is always the smallest thing that makes next week easier. Not a 40-page plan.
+Column 2 — **Build on what you own.** Most practices already pay for more than they use. We make that work first, and only add a tool when it has earned its place.
+Column 3 — **Stay around.** Tech is never "done". When you're ready for more, I'm the same person on the other end of the message.
+
+## Work (`#work`)
+
+Eyebrow: Recent work
+
+H2: Two small starts
+
+**A facilitator launching her first course**
+*Situation* — A one-woman wellness practice ready to move from 1:1 sessions into an online course, with a website she already paid for and a dozen tool subscriptions suggested by well-meaning friends.
+*What we did first* — Fitted the course, the bookings and the client follow-up inside the platform she already had. New mandatory spend: nothing.
+*What's next* — A small pilot of the course with her existing clients, then an assistant to draft her follow-up emails.
+
+**A studio with 7,500 hand-kept contacts**
+*Situation* — A design studio whose entire new-business engine is a spreadsheet of contacts, updated by hand every year — hundreds of hours of careful work.
+*What we did first* — An AI research assistant that lives in his own spreadsheet, checks public pages for changes and queues them for his review. He stays in charge; it does the looking.
+*What's next* — Run it on one group of contacts, measure it against his manual pass, then decide together.
+
+Footer line of the section: Names kept private. Stories shared with permission.
+
+## How it works (`#how`)
+
+Eyebrow: The path
+
+H2: Three steps, at your pace
+
+(steps moved under the Quick-Win card)
