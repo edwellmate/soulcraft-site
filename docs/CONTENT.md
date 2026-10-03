@@ -92,7 +92,7 @@ H2: Behind The Practice
 
 Intro: Conversations with the facilitators and community builders who quietly serve others, their stories of challenge, inspiration and hard-won wisdom. **This is their microphone.**
 
-Pull quote: Heart-led facilitators shouldn't have to become influencers to be heard. *So we give them a room.*
+Pull quote: You don't need followers or likes. *You need a stage, and the one person who needed to hear it.*
 
 (Embeds: Spotify show · Apple Podcasts · YouTube playlist, attributes copied exactly from `docs/_wellmate-episodes-section.html`.)
 
@@ -117,7 +117,7 @@ The three hats (each a small card with a link):
 - **Behind The Practice**, host. The podcast where facilitators are heard for the depth of their work. → Listen (`#podcast`)
 - **Path Collective**, co-founder & CPO. A platform to find and book trusted wellness events and facilitators. Soft launching now. → pathcollective.com
 
-Closing line: One village, different rooms. Find me on Instagram → @eduardo.mexaus
+Closing line: Different hats, different channels, different tools. *One purpose: to serve.* + Instagram pill @eduardo.mexaus
 
 ## Path Collective (`#path`)
 
