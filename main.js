@@ -1,7 +1,7 @@
 /* soulcraft.me — no dependencies. Ed fills the three constants the morning after. */
 var STRIPE_LINK   = "";   // Stripe Payment Link, $149 AUD, success URL = TIDYCAL_URL
 var TIDYCAL_URL   = "";   // TidyCal booking page for the 60-min session
-var FORM_ENDPOINT = "";   // Lambda Function URL for the email form
+var FORM_ENDPOINT = "https://opa4vcnq7gnw4dudy2lbhn6rf40tfdfr.lambda-url.ap-southeast-2.on.aws/";   // Lambda Function URL for the email form
 
 (function () {
   "use strict";
