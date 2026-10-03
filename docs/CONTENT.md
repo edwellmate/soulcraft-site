@@ -142,7 +142,7 @@ Messages: success "You're in. Talk soon." · already "You're already on the list
 
 ## Footer
 
-Column Consulting · Soulcraft: Book a Quick-Win Session · IT consulting · AI learning
+Column Consulting · Soulcraft: Book a Quick-Win Session · Consulting · AI learning
 Column Podcast: Spotify · Apple Podcasts · YouTube
 Column Elsewhere: Path Collective (pathcollective.com) · Instagram
 Column Contact: eduardo@soulcraft.me · Melbourne, Australia
