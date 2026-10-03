@@ -251,29 +251,31 @@ html{scroll-padding-top:72px}
 .guest li::marker{color:var(--euc)}
 
 /* ---------- about ---------- */
-.about{display:grid;gap:2.5rem;align-items:start}
-.about__media{max-width:420px}
-.portrait{position:relative}
-.portrait::before{content:"";position:absolute;inset:0;transform:translate(8px,8px);border:4px solid var(--rose);border-radius:var(--radius);z-index:0}
-.portrait img{position:relative;z-index:1;border-radius:var(--radius);border:1px solid var(--hair);width:100%;height:auto}
-.about__p1{max-width:36rem;margin-bottom:1.75rem}
-.hats{list-style:none;margin:0 0 1.75rem;padding:0;display:grid;gap:1rem}
-.hat{padding:1.1rem 1.25rem}
-.hat h3{font-size:1.05rem;margin-bottom:.3rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem}
-.hat__role{font-family:var(--display);font-style:italic;font-weight:400;font-variation-settings:"opsz" 72;color:var(--stone);font-size:1rem}
-.hat p{margin:0 0 .35rem;font-size:1rem}
-.hat__link{font-weight:500}
-.about__close{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .5rem;margin:0;font-family:var(--display);font-variation-settings:"opsz" 72;font-size:1.15rem}
-.about__close .iconlink{font-family:var(--body);font-size:1rem;font-weight:500}
-@media (min-width:620px){.hats{grid-template-columns:repeat(3,1fr)}}
+.about{display:grid;gap:3rem;align-items:center}
+.about__media{max-width:400px;margin-inline:auto;width:100%}
+.portrait{position:relative;padding:1.5rem 1.5rem 0 0}
+.portrait__arcs{position:absolute;right:0;top:0;width:62%;height:auto;z-index:0}
+.portrait img{
+  position:relative;z-index:1;width:100%;height:auto;display:block;
+  border-radius:999px 999px var(--radius) var(--radius);
+  box-shadow:0 24px 48px -28px rgba(39,49,47,.45);
+}
+.about__text .eyebrow{margin-bottom:1rem}
+.about__p1{max-width:36rem;margin-bottom:2rem;font-size:1.0625rem}
+.hats{list-style:none;margin:0 0 2rem;padding:0;border-top:1px solid var(--hair)}
+.hat{display:grid;gap:.35rem 1.5rem;padding:1.15rem 0;border-bottom:1px solid var(--hair)}
+.hat h3{margin:0;font-size:1.05rem;line-height:1.3}
+.hat__role{margin:0;font-family:var(--display);font-style:italic;font-variation-settings:"opsz" 72;color:var(--euc-deep);font-size:1rem;line-height:1.3}
+.hat__what p{margin:0 0 .3rem;font-size:1rem;color:var(--ink)}
+.hat__link{font-weight:500;font-size:.95rem}
+.about__close{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.25rem}
+.about__close p{margin:0;font-family:var(--display);font-variation-settings:"opsz" 72;font-size:1.2rem;color:var(--ink)}
+.about__close .btn{min-height:42px;padding:.5rem 1.1rem;font-size:.95rem}
+.about__close .btn .ico{width:18px;height:18px}
+@media (min-width:620px){.hat{grid-template-columns:minmax(0,11rem) 1fr;align-items:start}}
 @media (min-width:860px){
-  .about{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:3.5rem}
-  .about__media{position:sticky;top:88px}
-  .hats{grid-template-columns:1fr}
-  .hat{display:grid;grid-template-columns:minmax(0,11rem) 1fr;column-gap:1.25rem;align-items:start}
-  .hat h3{flex-direction:column;align-items:flex-start;gap:0;margin:0}
-  .hat p{grid-column:2}
-  .hat__link{grid-column:2}
+  .about{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4rem}
+  .about__media{position:sticky;top:96px;margin:0}
 }
 
 /* ---------- path collective ---------- */
