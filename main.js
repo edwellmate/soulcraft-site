@@ -1,6 +1,6 @@
 /* soulcraft.me, no dependencies. Ed fills the three constants. */
 var STRIPE_LINK   = "https://buy.stripe.com/8x28wO0I7bZg5i48ujbZe00";   // Stripe Payment Link, $149 AUD, success URL = BOOKING_URL
-var BOOKING_URL   = "";   // Microsoft Bookings public page for the 60-min session
+var BOOKING_URL   = "https://bookings.cloud.microsoft/bookwithme/user/f4adebbd04204d74a595f0ab930befec@wellmate.me/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&ismsaljsauthenabled";   // Microsoft Bookings public page for the 60-min session
 var FORM_ENDPOINT = "https://opa4vcnq7gnw4dudy2lbhn6rf40tfdfr.lambda-url.ap-southeast-2.on.aws/";   // Lambda Function URL for the email form
 
 (function () {
