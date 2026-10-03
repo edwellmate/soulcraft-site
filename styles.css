@@ -214,8 +214,7 @@ html{scroll-padding-top:72px}
 .service h3{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
 .service p{margin:0;color:var(--ink)}
 .badge{display:inline-block;padding:.15rem .6rem;border-radius:999px;background:var(--rose);color:var(--ink);font:600 .7rem/1.6 var(--body);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
-.service--soon .field{margin-top:auto;padding-top:.5rem}
-.service--soon .field input{flex-basis:9rem}
+.service__link{margin-top:auto;padding-top:.25rem;font-weight:500}
 
 /* ---------- what happens next (inside quick-win) ---------- */
 .next{margin-top:clamp(2rem,4vw,3rem)}
@@ -228,6 +227,15 @@ html{scroll-padding-top:72px}
 }
 .step h3{margin-bottom:.4rem}
 .step p{margin:0}
+
+/* ---------- ai learning ---------- */
+.wins{list-style:none;padding:0;margin:0;counter-reset:win;gap:1.25rem}
+.win{counter-increment:win;padding-top:1.25rem}
+.win::before{content:counter(win);display:block;font-family:var(--display);font-weight:500;font-variation-settings:"opsz" 72;font-size:2.6rem;line-height:1;color:var(--euc);margin-bottom:.75rem}
+.win h3{margin-bottom:.4rem}
+.win p{margin:0}
+.ai-join{max-width:32rem;margin-top:clamp(2rem,4vw,3rem)}
+.ai-join p{margin-bottom:.75rem}
 
 /* ---------- podcast ---------- */
 .players{gap:1.5rem;align-items:start}

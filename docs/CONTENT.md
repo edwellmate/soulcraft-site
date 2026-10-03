@@ -8,7 +8,7 @@ Contact email for v1: `eduardo@wellmate.me` · Instagram: `https://www.instagram
 
 ## Nav
 
-Services · Podcast · About · **Book a Quick-Win Session**
+Services · AI learning · Podcast · About · **Book a Quick-Win Session**
 
 ## Hero (`#top`)
 
@@ -19,7 +19,7 @@ H1: **Technology that supports the work you actually do.**
 Sub: I help facilitators, community builders and small practices make their tools work for them — starting with one small, useful thing, and growing from there.
 
 Primary CTA: Book a Quick-Win Session — $149
-Secondary: I also host the Behind The Practice podcast ↓ (→ #podcast)
+Secondary: Learn AI for your practice ↓ (→ #ai-learning)
 
 
 ## Quick-Win Session (`#quick-win`)
@@ -65,10 +65,22 @@ Courses, bookings, payments, email, CRM — made to work with what you already p
 An ongoing partner for the small fixes and small builds that pile up. A few hours a month, no tickets, no jargon. Quoted after we've met.
 
 **AI learning** · Coming soon
-Practical sessions on using AI in a small practice — without losing the human part. Leave your email and you'll hear first.
-(Inline form: email input + button "Keep me posted".)
+Practical sessions and courses on using AI in a small practice — without losing the human part.
+Link: Three free quick wins → (#ai-learning)
 
 
+
+## AI learning (`#ai-learning`)
+
+Eyebrow: AI learning
+H2: Three quick AI wins for practitioners
+Intro: Free, and you can do each one this week with tools you already have. The sessions and courses that go deeper are coming — leave your email and you'll hear first.
+
+1. **Session notes → follow-up email** — Record a 60-second voice memo after each session. Let an assistant turn it into a warm follow-up in your own voice. You read it, fix one line, send. Ten minutes a day back.
+2. **One recording → a month of posts** — Take one workshop or podcast recording. Ask for the twelve ideas inside it, then for each as a short post in your tone. Schedule them. Content stops being a second job.
+3. **Your own answers → an enquiry helper** — Paste your last twenty email replies to new enquiries. Ask the assistant to draft answers to the next ones using only those. You stay the voice; it saves the typing.
+
+Form lead: **Want the next ones, and first word on the sessions?** · Button: Keep me posted (source `ai-learning`)
 
 ## Podcast (`#podcast`)
 
@@ -99,9 +111,9 @@ H2: I'm Eduardo. I build for the people who hold the room.
 P1: I grew up in Mexico City and have built my life in Australia for almost a decade — somewhere between technology, conscious community and the dance floor. My days go into building tools for wellness facilitators and community builders. My evenings go into the rooms they hold.
 
 The three hats (each a small card with a link):
-- **Soulcraft** — founder. Where I put twenty years of software and AI work at the service of this world.
+- **Soulcraft** — founder. Where I put 15 years in tech, consulting and product at the service of this world.
 - **Behind The Practice** — host. The podcast where facilitators are heard for the depth of their work. → Listen (`#podcast`)
-- **Path Collective** — co-founder & CPO. A platform to find and book trusted wellness events and facilitators. → pathcollective.com
+- **Path Collective** — co-founder & CPO. A platform to find and book trusted wellness events and facilitators. Soft launching now. → pathcollective.com
 
 Closing line: One village, different rooms. Find me on Instagram → @eduardo.mexaus
 
@@ -111,11 +123,11 @@ Eyebrow: Also from this village
 
 H2: Path Collective
 
-Badge: Launching soon in Australia
+Badge: Soft launch underway
 
-P: Soulcraft is where I help you with your tools. Path Collective is where people find you: a curated platform to discover and book trusted wellness events, retreats and facilitators.
+P: Soulcraft is where I help you with your tools. Path Collective is where people find you: a curated platform to discover and book trusted wellness events, retreats and facilitators. Our first founding facilitators and ambassadors are joining now for the soft launch; public launch in Australia early 2027.
 
-Link: Visit Path Collective →
+Link: Join the waitlist →
 
 ## Stay in touch (`#join`)
 
