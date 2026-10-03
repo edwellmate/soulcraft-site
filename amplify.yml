@@ -8,6 +8,7 @@ frontend:
     baseDirectory: /
     files:
       - index.html
+      - thanks.html
       - styles.css
       - main.js
       - 'assets/**/*'

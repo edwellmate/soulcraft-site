@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank you · Soulcraft</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>
+.thanks{min-height:70vh;display:grid;align-items:center}
+.thanks__card{max-width:38rem}
+.thanks__steps{margin:1.5rem 0 2rem;padding-left:1.2em}
+.thanks__steps li{margin-bottom:.5rem}
+.thanks__steps li::marker{color:var(--euc)}
+.thanks__alt{margin-top:1rem}
+</style>
+</head>
+<body>
+<header class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="assets/logo.svg" alt="Soulcraft" width="149" height="36"></a>
+  </div>
+</header>
+<main>
+  <section class="section section--bone thanks" id="top">
+    <div class="wrap">
+      <div class="thanks__card">
+        <p class="eyebrow">Quick-Win Session</p>
+        <h1>Thank you. One more step: pick a time.</h1>
+        <p>Your payment went through. Sessions run Monday to Wednesday, 10am to 4pm Melbourne, 60 minutes, online.</p>
+        <div id="thanks-book" hidden>
+          <a class="btn btn--primary" id="thanks-book-link" href="#">Choose a time</a>
+          <p class="small muted thanks__alt">If none of the times work, email me at <a href="mailto:eduardo@soulcraft.me?subject=Quick-Win%20Session%20time">eduardo@soulcraft.me</a> and we'll lock one in together.</p>
+        </div>
+        <div id="thanks-email">
+          <p>I'll email you within one business day with a few times to choose from. If you'd rather pick now, write to <a href="mailto:eduardo@soulcraft.me?subject=Quick-Win%20Session%20time">eduardo@soulcraft.me</a>.</p>
+        </div>
+        <ol class="thanks__steps">
+          <li>Before we meet, jot down the three things that eat most of your admin time.</li>
+          <li>Have your main tools open on the day: bookings, payments, email, your spreadsheet.</li>
+          <li>You'll leave with a one-page note: the quick win, what it costs, and how to do it.</li>
+        </ol>
+        <p><a href="/">Back to soulcraft.me</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="main.js"></script>
+<script>
+(function(){
+  if (typeof BOOKING_URL !== "undefined" && BOOKING_URL) {
+    document.getElementById("thanks-book-link").href = BOOKING_URL;
+    document.getElementById("thanks-book").hidden = false;
+    document.getElementById("thanks-email").hidden = true;
+  }
+})();
+</script>
+</body>
+</html>
