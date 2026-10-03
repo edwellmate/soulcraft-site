@@ -4,7 +4,7 @@ Public website for **Soulcraft** — Eduardo Rivas's technology & AI practice fo
 
 - `index.html` · `styles.css` · `main.js` · `assets/` — the whole site; no framework, no build step
 - `docs/REQUIREMENTS.md` · `docs/BRAND.md` · `docs/CONTENT.md` — the spec the site is built from
-- `docs/DEPLOY.md` — Amplify, Lambda, Stripe/TidyCal, Hostinger DNS, and the wellmate.me retirement steps
+- `docs/DEPLOY.md` — Amplify, Lambda, Stripe/Microsoft Bookings, Hostinger DNS, and the wellmate.me retirement steps
 - `soulcraft-newsletter-lambda.js` — email form backend (Sender.net)
 - `tools/contrast.mjs` · `tools/screenshots.mjs` — the quality checks (see below)
 
@@ -15,15 +15,15 @@ Built overnight by a Claude Code routine from the issue queue; see `.claude/skil
 Three public URLs live at the top of `main.js` and ship empty. Until they are filled, every "Book" button and both email forms fall back to a prefilled `mailto:eduardo@wellmate.me`.
 
 ```js
-var STRIPE_LINK   = "";   // Stripe Payment Link, $149 AUD, success URL = TIDYCAL_URL
-var TIDYCAL_URL   = "";   // TidyCal booking page for the 60-min session
+var STRIPE_LINK   = "";   // Stripe Payment Link, $149 AUD, success URL = BOOKING_URL
+var BOOKING_URL   = "";   // Microsoft Bookings public page for the 60-min session
 var FORM_ENDPOINT = "";   // Lambda Function URL for the email form
 ```
 
 | Constant | Where it comes from | Behaviour once set |
 |---|---|---|
-| `STRIPE_LINK` | `docs/DEPLOY.md` Part E, step 1 | "Book a Quick-Win Session" goes to Stripe; Stripe's success URL sends them on to TidyCal |
-| `TIDYCAL_URL` | `docs/DEPLOY.md` Part E, steps 2–3 | Used as the Stripe success URL; if `STRIPE_LINK` is still empty, booking goes straight here (pay on the day) |
+| `STRIPE_LINK` | `docs/DEPLOY.md` Part E, step 1 | "Book a Quick-Win Session" goes to Stripe; Stripe's success URL sends them on to Microsoft Bookings |
+| `BOOKING_URL` | `docs/DEPLOY.md` Part E, steps 2–3 | Used as the Stripe success URL; if `STRIPE_LINK` is still empty, booking goes straight here (pay on the day) |
 | `FORM_ENDPOINT` | `docs/DEPLOY.md` Parts B–C (Lambda + Function URL with CORS on the Function URL, none in code) | Both forms `POST` `{ "email", "source" }` as JSON; `source` is `join` or `ai-learning` |
 
 Paste the value between the quotes, commit, push — Amplify redeploys `main` automatically (Part A). Domain and DNS are Part D.

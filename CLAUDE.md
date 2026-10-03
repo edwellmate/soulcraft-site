@@ -11,7 +11,7 @@ Public site for Soulcraft (Eduardo Rivas's tech & AI consultancy for the wellnes
 ## Rules
 - Static only: `index.html`, `styles.css`, `main.js`, `assets/`. No framework, no bundler, no runtime npm deps. `npx` tooling for checks is fine, never committed.
 - No base64 photos in HTML. SVG inline or in `assets/`.
-- Secrets never in the repo. `STRIPE_LINK`, `TIDYCAL_URL`, `FORM_ENDPOINT` are public URLs filled by Ed; leave them empty strings.
+- Secrets never in the repo. `STRIPE_LINK`, `BOOKING_URL`, `FORM_ENDPOINT` are public URLs filled by Ed; leave them empty strings.
 - The Lambda emits **no** CORS headers — the Function URL config does.
 - Copy = `docs/CONTENT.md`. Prices: only `$149`. Never name clients. Never use the word "assessment" on the page.
 - Australian English.

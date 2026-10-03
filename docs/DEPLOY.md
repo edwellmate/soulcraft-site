@@ -136,15 +136,23 @@ edited in Hostinger's **DNS Zone**, NOT Route 53. The apex currently shows Hosti
 
 ---
 
-## Part E — Booking links (Stripe + TidyCal)
+## Part E — Booking links (Stripe + Microsoft Bookings)
 
-1. **Stripe → Payment Links → New**: product "Quick-Win Session (60 min)", A$149, one-off.
-   After payment → **Redirect to a URL** → your TidyCal booking page.
-2. **TidyCal → Booking types → New**: "Quick-Win Session", 60 min, online (Zoom/Meet).
-   Copy the public booking URL.
-3. Edit `main.js`: `STRIPE_LINK = "<payment link>"`, `TIDYCAL_URL = "<tidycal url>"`.
+1. **Microsoft Bookings → new service**: "Quick-Win Session", 60 min, online (Teams),
+   Monday–Wednesday 10am–4pm Melbourne. Publish the booking page as **public**
+   (no Microsoft 365 sign-in) and copy its URL.
+2. **Stripe → Payment Links → New**: product "Quick-Win Session (60 min)", A$149, one-off.
+   Price is **GST-inclusive** (tax behaviour: inclusive) with a services tax code, so
+   registering for GST later doesn't change the price clients see.
+   After payment → **Redirect to a URL** → the Bookings page from step 1.
+3. Edit `main.js`: `STRIPE_LINK = "<payment link>"`, `BOOKING_URL = "<bookings url>"`.
    Commit + push; Amplify redeploys.
-4. Test end to end once with a 100%-off coupon or Stripe test mode.
+4. Test end to end once in Stripe test mode (sandbox link + test card) or with a 100%-off coupon.
+
+The Bookings page is reachable without paying (anyone with the URL can book). Before
+each session, match the booking against a Stripe payment.
+
+---
 
 ## Part F — Retiring wellmate.me (when ready)
 

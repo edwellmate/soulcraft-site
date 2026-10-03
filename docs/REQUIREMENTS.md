@@ -15,7 +15,7 @@ Tone: grounded, warm, earthy, wholesome, supportive. Short-term genuinely useful
 
 - **Static site, no framework, no build step.** Files: `index.html`, `styles.css`, `main.js`, `assets/`. Hosted on AWS Amplify from `main` (see `amplify.yml`). Node is allowed only for dev tooling (Lighthouse, Playwright screenshots, contrast check) — never as a runtime dependency.
 - **No base64-inlined photos** (wellmate.me's single file was 1.18 MB because of one portrait). Images are real files under `assets/`; logo and icons are inline or external **SVG**. `assets/portrait.jpg` (750×900) is provided; serve it at ≤ 600 px wide with `width`/`height` attributes and `loading="lazy"`.
-- External resources allowed: Google Fonts (one `<link>`), the three podcast embeds (Spotify, Apple Podcasts, YouTube-nocookie), Stripe Payment Link and TidyCal as plain links. Nothing else — no analytics tonight.
+- External resources allowed: Google Fonts (one `<link>`), the three podcast embeds (Spotify, Apple Podcasts, YouTube-nocookie), Stripe Payment Link and Microsoft Bookings as plain links. Nothing else — no analytics tonight.
 - Australian English (`lang="en-AU"`). Prices in AUD, written `$149` (no "AUD" on the page; JSON-LD carries the currency).
 - Accessibility: WCAG 2.1 AA. Semantic landmarks, one `<h1>`, visible focus rings, `aria-live` on form status, `prefers-reduced-motion` guard for any animation, all images with meaningful `alt`.
 - Performance budget: HTML+CSS+JS ≤ 60 KB gzipped (excluding embeds and the portrait). Embeds use `loading="lazy"`. Lighthouse ≥ 95 on Performance, Accessibility, Best Practices, SEO (mobile preset).
@@ -53,14 +53,14 @@ v1.1 (2026-10-03) removed The stance, Work (two stories) and How it works as sta
 `main.js` starts with three constants, empty by default; Ed fills them the morning after:
 
 ```js
-var STRIPE_LINK   = "";   // Stripe Payment Link, $149 AUD, success URL = TIDYCAL_URL
-var TIDYCAL_URL   = "";   // TidyCal booking page for the 60-min session
+var STRIPE_LINK   = "";   // Stripe Payment Link, $149 AUD, success URL = BOOKING_URL
+var BOOKING_URL   = "";   // Microsoft Bookings public page for the 60-min session
 var FORM_ENDPOINT = "";   // Lambda Function URL for the email form
 ```
 
 Behaviour of the primary CTA ("Book a Quick-Win Session"):
-1. `STRIPE_LINK` set → navigate to it (new tab not required; same tab is fine). Stripe's success URL sends them on to TidyCal. The card explains this in one line ("pay, then pick a time").
-2. `STRIPE_LINK` empty but `TIDYCAL_URL` set → navigate to TidyCal (pay on the day).
+1. `STRIPE_LINK` set → navigate to it (new tab not required; same tab is fine). Stripe's success URL sends them on to Microsoft Bookings. The card explains this in one line ("pay, then pick a time").
+2. `STRIPE_LINK` empty but `BOOKING_URL` set → navigate to Microsoft Bookings (pay on the day).
 3. Both empty → open `mailto:eduardo@wellmate.me?subject=Quick-Win%20Session` with a short prefilled body.
 
 The secondary link "Not sure yet? Say hi" always goes to the mailto / Instagram DM.
@@ -98,4 +98,4 @@ Ed will retire wellmate.me (sooner rather than later). Tonight's build makes sou
 
 ## 10. Out of scope tonight (Ed's morning checklist — `night-shift:skip` issues)
 
-Stripe Payment Link · TidyCal booking page · Sender.net group decision · Lambda deploy + Function URL CORS · Amplify app + custom domain · Hostinger DNS for apex and `www` (the `consulting.`, `path.`, `reels.` subdomains point at the Lightsail box and must not be touched) · `eduardo@soulcraft.me` mailbox · a Soulcraft line in wellmate.me's host section.
+Stripe Payment Link · Microsoft Bookings page · Sender.net group decision · Lambda deploy + Function URL CORS · Amplify app + custom domain · Hostinger DNS for apex and `www` (the `consulting.`, `path.`, `reels.` subdomains point at the Lightsail box and must not be touched) · `eduardo@soulcraft.me` mailbox · a Soulcraft line in wellmate.me's host section.

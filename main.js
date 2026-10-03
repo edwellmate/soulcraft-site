@@ -1,16 +1,16 @@
 /* soulcraft.me — no dependencies. Ed fills the three constants the morning after. */
-var STRIPE_LINK   = "";   // Stripe Payment Link, $149 AUD, success URL = TIDYCAL_URL
-var TIDYCAL_URL   = "";   // TidyCal booking page for the 60-min session
+var STRIPE_LINK   = "";   // Stripe Payment Link, $149 AUD, success URL = BOOKING_URL
+var BOOKING_URL   = "";   // Microsoft Bookings public page for the 60-min session
 var FORM_ENDPOINT = "https://opa4vcnq7gnw4dudy2lbhn6rf40tfdfr.lambda-url.ap-southeast-2.on.aws/";   // Lambda Function URL for the email form
 
 (function () {
   "use strict";
 
-  /* ---- booking: Stripe → TidyCal → mailto (REQUIREMENTS §5) ---- */
+  /* ---- booking: Stripe → Microsoft Bookings → mailto (REQUIREMENTS §5) ---- */
   var MAILTO = "mailto:eduardo@wellmate.me";
   function bookingHref() {
     if (STRIPE_LINK) return STRIPE_LINK;
-    if (TIDYCAL_URL) return TIDYCAL_URL;
+    if (BOOKING_URL) return BOOKING_URL;
     return MAILTO + "?subject=" + encodeURIComponent("Quick-Win Session") +
       "&body=" + encodeURIComponent("Hi Eduardo,\n\nI'd like to book a Quick-Win Session. Here's a little about how I run things:\n\n");
   }
