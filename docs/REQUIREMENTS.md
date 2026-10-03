@@ -61,7 +61,7 @@ var FORM_ENDPOINT = "";   // Lambda Function URL for the email form
 Behaviour of the primary CTA ("Book a Quick-Win Session"):
 1. `STRIPE_LINK` set → navigate to it (new tab not required; same tab is fine). Stripe's success URL sends them on to TidyCal. The card explains this in one line ("pay, then pick a time").
 2. `STRIPE_LINK` empty but `TIDYCAL_URL` set → navigate to TidyCal (pay on the day).
-3. Both empty → open `mailto:eduardo@wellmate.me?subject=Quick-Win%20Session` with a short prefilled body.
+3. Both empty → open `mailto:eduardo@soulcraft.me?subject=Quick-Win%20Session` with a short prefilled body.
 
 The secondary link "Not sure yet? Say hi" always goes to the mailto / Instagram DM.
 

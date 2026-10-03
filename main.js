@@ -7,7 +7,7 @@ var FORM_ENDPOINT = "https://opa4vcnq7gnw4dudy2lbhn6rf40tfdfr.lambda-url.ap-sout
   "use strict";
 
   /* ---- booking: Stripe, then Bookings, then mailto (REQUIREMENTS §5) ---- */
-  var MAILTO = "mailto:eduardo@wellmate.me";
+  var MAILTO = "mailto:eduardo@soulcraft.me";
   function bookingHref() {
     if (STRIPE_LINK) return STRIPE_LINK;
     if (BOOKING_URL) return BOOKING_URL;
@@ -35,7 +35,7 @@ var FORM_ENDPOINT = "https://opa4vcnq7gnw4dudy2lbhn6rf40tfdfr.lambda-url.ap-sout
     if (isErr) {
       var a = document.createElement("a");
       a.href = MAILTO;
-      a.textContent = "eduardo@wellmate.me";
+      a.textContent = "eduardo@soulcraft.me";
       el.appendChild(a);
       el.appendChild(document.createTextNode("."));
     }

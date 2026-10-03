@@ -2,7 +2,7 @@
 
 Every visible sentence on the site comes from here. Do not add claims, prices, client names or features. Minor punctuation fixes for layout are fine; new sentences are not, park them as a question instead.
 
-Contact email for v1: `eduardo@wellmate.me` · Instagram: `https://www.instagram.com/eduardo.mexaus` (handle `@eduardo.mexaus`).
+Contact email for v1: `eduardo@soulcraft.me` · Instagram: `https://www.instagram.com/eduardo.mexaus` (handle `@eduardo.mexaus`).
 
 ---
 
@@ -102,7 +102,7 @@ If you hold space and care about co-creation, there's a seat here for you.
 - You do work that's hard to compress into a clip, and you'd rather talk about it properly.
 - You want to be heard for the depth of the practice, not your posting schedule.
 - You're up for an honest, unhurried conversation, no script, no selling.
-Reach out at [eduardo@wellmate.me] or [send me a message on Instagram].
+Reach out at [eduardo@soulcraft.me] or [send me a message on Instagram].
 
 ## About (`#about`)
 
@@ -141,14 +141,14 @@ P: New episodes, the occasional quick win worth sharing, and first word on the A
 
 Input placeholder: you@example.com · Button: Join
 Note under form: Unsubscribe anytime.
-Messages: success "You're in. Talk soon." · already "You're already on the list." · error "That didn't go through, email me instead at eduardo@wellmate.me."
+Messages: success "You're in. Talk soon." · already "You're already on the list." · error "That didn't go through, email me instead at eduardo@soulcraft.me."
 
 ## Footer
 
 Column Soulcraft: Services · Book a session
 Column Podcast: Spotify · Apple Podcasts · YouTube
 Column Elsewhere: Path Collective (pathcollective.com) · Instagram
-Column Contact: eduardo@wellmate.me · Melbourne, Australia
+Column Contact: eduardo@soulcraft.me · Melbourne, Australia
 
 Legal: © 2026 Eduardo Rivas · soulcraft.me
 
