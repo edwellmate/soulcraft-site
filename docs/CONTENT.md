@@ -8,7 +8,7 @@ Contact email for v1: `eduardo@soulcraft.me` · Instagram: `https://www.instagra
 
 ## Nav
 
-Services · AI learning · Podcast · About · **Book a Quick-Win Session**
+Services · AI learning · Podcast · About (no button in the header)
 
 ## Hero (`#top`)
 
@@ -18,7 +18,7 @@ H1: **Technology that supports the work you actually do.**
 
 Sub: I help facilitators, community builders and small practices make their tools work for them, starting with one small, useful thing, and growing from there.
 
-Primary CTA: Book a Quick-Win Session, $149
+Primary CTA: Book a Quick-Win Session
 Secondary: Learn AI for your practice ↓ (→ #ai-learning)
 
 House rule: never use the em dash character anywhere on the site.
@@ -115,7 +115,7 @@ P1: I grew up in Mexico City and have built my life in Australia for almost a de
 The three hats (each a small card with a link):
 - **Soulcraft**, founder. Where I put 15 years in tech, consulting and product at the service of this world.
 - **Behind The Practice**, host. The podcast where facilitators are heard for the depth of their work. → Listen (`#podcast`)
-- **Path Collective**, co-founder & CPO. A platform to find and book trusted wellness events and facilitators. Soft launching now. → pathcollective.com
+- **Path Collective**, co-founder. A platform to find and book trusted wellness events and facilitators. Soft launching now. → pathcollective.com
 
 Closing line: Different hats, different channels, different tools. *One purpose: to serve.* + Instagram pill @eduardo.mexaus
 
