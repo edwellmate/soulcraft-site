@@ -1,6 +1,6 @@
 # soulcraft.me — Software Requirements (v1)
 
-Owner: Eduardo Rivas (Ed) · Entity: MBS Unity Pty Ltd · Written 2026-10-02.
+Owner: Eduardo Rivas (Ed) · Entity: Eduardo Rivas, sole trader (Soulcraft); Stripe + invoices under his ABN, not MBS Unity · Written 2026-10-02.
 Companions: [BRAND.md](BRAND.md) (tokens, type, icons, logo) · [CONTENT.md](CONTENT.md) (every word on the page) · [DEPLOY.md](DEPLOY.md) (Amplify, Lambda, DNS).
 
 ## 1. Purpose
@@ -38,7 +38,7 @@ All copy comes from [CONTENT.md](CONTENT.md) verbatim. The agent decides layout 
 | 8 | About | `#about` | bone | Portrait + the three hats (Soulcraft founder · podcast host · Path Collective co-founder & CPO) each with its link; Instagram handle with icon. |
 | 9 | Path Collective | `#path` | white | Logo (`assets/path-collective-logo.png`), "Launching soon in Australia" badge, 2 sentences, link. |
 | 10 | Stay in touch | `#join` | sand | Email form (§6). |
-| 11 | Footer | — | night-deep | 4 columns: Soulcraft (services/work/book) · Podcast (listen links) · Elsewhere (Wellmate, Path Collective, Instagram) · Contact. Legal line: `© 2026 MBS Unity Pty Ltd · soulcraft.me`. |
+| 11 | Footer | — | night-deep | 4 columns: Soulcraft (services/work/book) · Podcast (listen links) · Elsewhere (Wellmate, Path Collective, Instagram) · Contact. Legal line: `© 2026 Eduardo Rivas · soulcraft.me`. |
 
 ## 4. Head / SEO
 

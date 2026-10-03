@@ -157,7 +157,7 @@ Column Podcast: Spotify · Apple Podcasts · YouTube
 Column Elsewhere: Wellmate (wellmate.me) · Path Collective (pathcollective.com) · Instagram
 Column Contact: eduardo@wellmate.me · Melbourne, Australia
 
-Legal: © 2026 MBS Unity Pty Ltd · soulcraft.me
+Legal: © 2026 Eduardo Rivas · soulcraft.me
 
 ## Meta
 
