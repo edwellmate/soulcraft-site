@@ -48,7 +48,7 @@ You leave with (list):
 
 Credit line: If we go on to build something together within 30 days, the $149 comes off the first invoice.
 
-Flow line: Pay, then pick a time that suits you.
+Flow line: Pay, then pick a time that suits you. Sessions run Monday to Wednesday, 10am–4pm Melbourne. If none of the times work, [reach out] and we'll lock one in together.
 
 Button: Book a Quick-Win Session
 Below button: Not sure yet? [Say hi] — a message costs nothing.
