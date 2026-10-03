@@ -2,6 +2,15 @@
 
 Public site for Soulcraft (Eduardo Rivas's tech & AI consultancy for the wellness world). Static HTML on AWS Amplify, apex `soulcraft.me`. Sister of `edwellmate/wellmate-site`, which it will replace.
 
+## `main` is production
+
+Amplify app `d2m4x7eeej9yo3` builds `main` on every push and the site is live at soulcraft.me within
+about a minute. The page carries a live A$149 payment link, so a bad merge is a broken shopfront.
+Run `node tools/healthcheck.mjs` after every merge; if it fails and it did not before, revert.
+
+`assets/logo-email.png` and `assets/logo-email-on-dark.png` are hot-linked by guide emails already
+sitting in people's inboxes. Never rename, move or re-optimise them.
+
 ## Read first
 - `docs/REQUIREMENTS.md`, what to build and the quality gates
 - `docs/BRAND.md`, tokens, type, icons, logo brief
@@ -18,4 +27,6 @@ Public site for Soulcraft (Eduardo Rivas's tech & AI consultancy for the wellnes
 - One PR per issue, squash-merge to `main`, close the issue with a one-line summary. Branch names `build/<issue-number>-<slug>`.
 
 ## Checks before any merge
-`python3 -m http.server 8080` then: `npx html-validate index.html` · `node tools/contrast.mjs` · `npx lighthouse http://localhost:8080 --quiet --chrome-flags="--headless" --output=json --output-path=/tmp/lh.json` (≥ 95 ×4) · `node tools/screenshots.mjs` (360/768/1280).
+`python3 -m http.server 8080` then: `npx html-validate index.html thanks.html` · `node tools/contrast.mjs` · `npx lighthouse http://localhost:8080 --quiet --chrome-flags="--headless" --output=json --output-path=/tmp/lh.json` (≥ 95 ×4) · `node tools/screenshots.mjs` (360/768/1280) · `grep -rnP '\x{2014}' index.html thanks.html styles.css main.js docs/ email/` (must find nothing).
+
+After merging: `node tools/healthcheck.mjs` (live pages, both certificates, SPF and MX, the three funnel links, the hosted email assets). Exit 0 required.
