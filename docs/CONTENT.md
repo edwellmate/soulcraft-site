@@ -18,7 +18,7 @@ H1: **Technology that supports the work you actually do.**
 
 Sub: I help facilitators, community builders and small practices make their tools work for them, starting with one small, useful thing, and growing from there.
 
-Primary CTA: Book a Quick-Win Session
+Primary CTA (button, scrolls to #quick-win): Start with a Quick-Win Session ↓
 Secondary: Learn AI for your practice ↓ (→ #ai-learning)
 
 House rule: never use the em dash character anywhere on the site.
@@ -51,26 +51,22 @@ What happens next (three steps under the card):
 2. **Quick win**, You get one small change you can make this month, and a plain note on what's possible later.
 3. **Grow when you're ready**, If and when you want more, we build it in small, affordable steps, on what you already own.
 
-## Services (`#services`)
+## Consulting services (`#services`)
 
-Eyebrow: Services
+Eyebrow: Consulting services
+H2: What I can help with
+Intro: Plain-language help with the technology behind your practice. No jargon, nothing you don't need.
 
-H2: What I help with
+**Your tools, working together**
+Bookings, payments, emails, a course, your client list. You're probably already paying for most of what you need. I make it all work together so you stop juggling, before you buy anything new.
 
-**AI assistants & automations**
-The repetitive research, updates and admin you do by hand, done by a small assistant that lives inside the tools you already use. You review; it does the digging.
+**A helper for the repetitive stuff**
+The research, updates and admin you do by hand every week. I set up a small AI assistant that does the digging inside the tools you already use. You stay in charge; you just stop doing the boring part.
 
-**Right-size your tech stack**
-Courses, bookings, payments, email, CRM, made to work with what you already pay for, before you buy anything new.
+**Someone to call**
+When something breaks, or you want a small change, you message me and it gets done. A few hours a month, no tickets, no tech-speak. We agree the details once we've met.
 
-**Tech Care**
-An ongoing partner for the small fixes and small builds that pile up. A few hours a month, no tickets, no jargon. Quoted after we've met.
-
-**AI learning** · Coming soon
-Practical sessions and courses on using AI in a small practice, without losing the human part.
-Link: Three free quick wins → (#ai-learning)
-
-
+(AI learning has its own section; it is no longer a service card.)
 
 ## AI learning (`#ai-learning`)
 
