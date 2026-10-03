@@ -41,7 +41,7 @@ You leave with (list):
 
 Credit line: If we go on to build something together within 30 days, the $149 comes off the first invoice.
 
-Flow line: Pay, then pick a time that suits you. Sessions run Monday to Wednesday, 10am–4pm Melbourne. If none of the times work, email me at eduardo@soulcraft.me and we'll lock one in together.
+Flow line: Pay, then pick a time that suits you. Sessions run Tuesday to Thursday, 10am to 4pm Melbourne. If none of the times work, email me at eduardo@soulcraft.me and we'll lock one in together.
 
 Button: Book a Quick-Win Session
 Below button: Not sure yet? Email eduardo@soulcraft.me or message me on Instagram. A message costs nothing.

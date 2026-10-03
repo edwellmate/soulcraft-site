@@ -30,7 +30,7 @@ All copy comes from [CONTENT.md](CONTENT.md) verbatim. The agent decides layout 
 | 0 | Nav (sticky) |, | bone, hairline | Logo; links Services · AI learning · Podcast · About; CTA "Book a Quick-Win Session" → `#quick-win`. |
 | 1 | Hero | `#top` | bone | H1 + sub + primary CTA + secondary line "Learn AI for your practice ↓" → `#ai-learning`. Arcs decoration ≥ 860 px. |
 | 2 | What I help with | `#services` | night | 4 service cards (white on night); AI-learning card carries the inline email capture. |
-| 3 | Start with a Quick-Win Session | `#quick-win` | sand | The priced card (hours Mon–Wed 10–4, reach-out line) + "What happens next" three-step row beneath it. |
+| 3 | Start with a Quick-Win Session | `#quick-win` | sand | The priced card (hours Tue to Thu, 10am to 4pm, reach-out line) + "What happens next" three-step row beneath it. |
 | 3b | Three quick AI wins for practitioners | `#ai-learning` | white | Free resource (three numbered wins) + the `ai-learning` signup form. Hero secondary CTA and nav point here. This is the line of business Ed intends to scale (courses). |
 | 4 | Behind The Practice | `#podcast` | bone | Intro ("This is their microphone."), pull quote, three embeds unchanged, "Come on the show" block with four bullets + reach-out. |
 | 5 | About | `#about` | pebble | Portrait + three hats + Instagram. |

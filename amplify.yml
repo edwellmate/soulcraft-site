@@ -11,6 +11,7 @@ frontend:
       - thanks.html
       - styles.css
       - main.js
+      - thanks.js
       - 'assets/**/*'
   cache:
     paths: []
