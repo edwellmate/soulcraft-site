@@ -1,4 +1,4 @@
-# soulcraft.me — Software Requirements (v1)
+# soulcraft.me, Software Requirements (v1)
 
 Owner: Eduardo Rivas (Ed) · Entity: Eduardo Rivas, sole trader (Soulcraft); Stripe + invoices under his ABN, not MBS Unity · Written 2026-10-02.
 Companions: [BRAND.md](BRAND.md) (tokens, type, icons, logo) · [CONTENT.md](CONTENT.md) (every word on the page) · [DEPLOY.md](DEPLOY.md) (Amplify, Lambda, DNS).
@@ -13,9 +13,9 @@ Tone: grounded, warm, earthy, wholesome, supportive. Short-term genuinely useful
 
 ## 2. Stack & constraints
 
-- **Static site, no framework, no build step.** Files: `index.html`, `styles.css`, `main.js`, `assets/`. Hosted on AWS Amplify from `main` (see `amplify.yml`). Node is allowed only for dev tooling (Lighthouse, Playwright screenshots, contrast check) — never as a runtime dependency.
+- **Static site, no framework, no build step.** Files: `index.html`, `styles.css`, `main.js`, `assets/`. Hosted on AWS Amplify from `main` (see `amplify.yml`). Node is allowed only for dev tooling (Lighthouse, Playwright screenshots, contrast check), never as a runtime dependency.
 - **No base64-inlined photos** (wellmate.me's single file was 1.18 MB because of one portrait). Images are real files under `assets/`; logo and icons are inline or external **SVG**. `assets/portrait.jpg` (750×900) is provided; serve it at ≤ 600 px wide with `width`/`height` attributes and `loading="lazy"`.
-- External resources allowed: Google Fonts (one `<link>`), the three podcast embeds (Spotify, Apple Podcasts, YouTube-nocookie), Stripe Payment Link and TidyCal as plain links. Nothing else — no analytics tonight.
+- External resources allowed: Google Fonts (one `<link>`), the three podcast embeds (Spotify, Apple Podcasts, YouTube-nocookie), Stripe Payment Link and TidyCal as plain links. Nothing else, no analytics tonight.
 - Australian English (`lang="en-AU"`). Prices in AUD, written `$149` (no "AUD" on the page; JSON-LD carries the currency).
 - Accessibility: WCAG 2.1 AA. Semantic landmarks, one `<h1>`, visible focus rings, `aria-live` on form status, `prefers-reduced-motion` guard for any animation, all images with meaningful `alt`.
 - Performance budget: HTML+CSS+JS ≤ 60 KB gzipped (excluding embeds and the portrait). Embeds use `loading="lazy"`. Lighthouse ≥ 95 on Performance, Accessibility, Best Practices, SEO (mobile preset).
@@ -27,7 +27,7 @@ All copy comes from [CONTENT.md](CONTENT.md) verbatim. The agent decides layout 
 
 | # | Section | id | Background | Notes |
 |---|---|---|---|---|
-| 0 | Nav (sticky) | — | bone, hairline | Logo; links Services · AI learning · Podcast · About; CTA "Book a Quick-Win Session" → `#quick-win`. |
+| 0 | Nav (sticky) |, | bone, hairline | Logo; links Services · AI learning · Podcast · About; CTA "Book a Quick-Win Session" → `#quick-win`. |
 | 1 | Hero | `#top` | bone | H1 + sub + primary CTA + secondary line "Learn AI for your practice ↓" → `#ai-learning`. Arcs decoration ≥ 860 px. |
 | 2 | What I help with | `#services` | night | 4 service cards (white on night); AI-learning card carries the inline email capture. |
 | 3 | Start with a Quick-Win Session | `#quick-win` | sand | The priced card (hours Mon–Wed 10–4, reach-out line) + "What happens next" three-step row beneath it. |
@@ -36,7 +36,7 @@ All copy comes from [CONTENT.md](CONTENT.md) verbatim. The agent decides layout 
 | 5 | About | `#about` | pebble | Portrait + three hats + Instagram. |
 | 6 | Path Collective | `#path` | white | Logo, badge, two sentences, link. |
 | 7 | Stay close to the work | `#join` | sand | Email form + "Unsubscribe anytime." |
-| — | Footer | — | night-deep | Soulcraft (Services · Book) · Podcast · Elsewhere (Path Collective · Instagram) · Contact. Legal: © 2026 Eduardo Rivas · soulcraft.me |
+|, | Footer |, | night-deep | Soulcraft (Services · Book) · Podcast · Elsewhere (Path Collective · Instagram) · Contact. Legal: © 2026 Eduardo Rivas · soulcraft.me |
 
 v1.1 (2026-10-03) removed The stance, Work (two stories) and How it works as standalone sections; rationale in the plan: three sections repeated "start small", price appeared before services, counting titles.
 
@@ -69,25 +69,25 @@ The secondary link "Not sure yet? Say hi" always goes to the mailto / Instagram 
 
 Same contract as wellmate.me (`docs/_wellmate-DEPLOY.md`, `soulcraft-newsletter-lambda.js`):
 - `<form id="sc-signup">` with one `type="email" name="email" required` input and a button; status `<p id="sc-signup-msg" aria-live="polite">`.
-- Client validates with a simple regex, then `fetch(FORM_ENDPOINT, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({email, source})})`. `source` is `"join"` or `"ai-learning"` so the SNS note says where they signed up. (The Lambda ignores unknown fields today — adding `source` to the SNS message is a one-line change, included in `soulcraft-newsletter-lambda.js`.)
+- Client validates with a simple regex, then `fetch(FORM_ENDPOINT, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({email, source})})`. `source` is `"join"` or `"ai-learning"` so the SNS note says where they signed up. (The Lambda ignores unknown fields today, adding `source` to the SNS message is a one-line change, included in `soulcraft-newsletter-lambda.js`.)
 - Responses: `{ok:true}` → "You're in. Talk soon." · `{ok:true, already:true}` → "You're already on the list." · anything else → friendly error with the mailto fallback.
 - `FORM_ENDPOINT` empty → open a prefilled mailto instead of failing.
-- **No CORS headers in the Lambda** — the Function URL config owns CORS (duplicate headers break browsers; learned on wellmate.me).
+- **No CORS headers in the Lambda**, the Function URL config owns CORS (duplicate headers break browsers; learned on wellmate.me).
 - The AI-learning card reuses the same JS with a second small form (`id="sc-signup-ai"`, `source:"ai-learning"`).
 
 ## 7. Assets the agent must produce
 
-- `assets/logo.svg` + `assets/logo-on-dark.svg` — outlined wordmark (BRAND.md §5). Also `assets/favicon.svg`, `assets/apple-touch-icon.png`.
-- `assets/og.png` 1200×630 — mark + wordmark + tagline on linen (render the SVG with a headless browser or `sharp`/`resvg` via `npx`; commit the PNG).
+- `assets/logo.svg` + `assets/logo-on-dark.svg`, outlined wordmark (BRAND.md §5). Also `assets/favicon.svg`, `assets/apple-touch-icon.png`.
+- `assets/og.png` 1200×630, mark + wordmark + tagline on linen (render the SVG with a headless browser or `sharp`/`resvg` via `npx`; commit the PNG).
 - Icons: inline SVG, one consistent set (BRAND.md §4). Social icons for Spotify, Apple Podcasts, YouTube, Instagram may be ported from wellmate.me's hero (`docs/_wellmate-episodes-section.html` and the wellmate repo `index.html:361–364`).
 - `assets/path-collective-logo.png` and `assets/portrait.jpg` are provided.
 - Delete `assets/wellmate-logo.png` and `assets/wellmate-favicon.png` once the Soulcraft logo exists (they are reference only).
 
 ## 8. Quality gates (each is a checkbox in the report)
 
-1. `npx html-validate index.html` (or W3C validator) — no errors.
+1. `npx html-validate index.html` (or W3C validator), no errors.
 2. Contrast: a small script (`tools/contrast.mjs`) computes WCAG ratios for every text/background token pair used; all ≥ 4.5:1 (≥ 3:1 for ≥ 24 px headings). Results pasted in the report.
-3. `npx lighthouse http://localhost:8080 --preset=desktop` and mobile (default) with `npx serve` or `python3 -m http.server 8080` — scores ≥ 95 ×4; JSON reports not committed.
+3. `npx lighthouse http://localhost:8080 --preset=desktop` and mobile (default) with `npx serve` or `python3 -m http.server 8080`, scores ≥ 95 ×4; JSON reports not committed.
 4. Playwright screenshots at 360, 768, 1280 px (`tools/screenshots.mjs`) attached to the report issue; `screenshots/` gitignored.
 5. No console errors; every anchor in the nav and footer resolves; every external link has `rel="noopener"` and `target="_blank"` only where it leaves the site.
 6. Copy diff: every sentence on the page appears in CONTENT.md (a quick grep spot-check is enough; call out any deviation).
@@ -96,6 +96,6 @@ Same contract as wellmate.me (`docs/_wellmate-DEPLOY.md`, `soulcraft-newsletter-
 
 Ed will retire wellmate.me (sooner rather than later). Tonight's build makes soulcraft.me able to absorb it: the `#podcast` section carries the same embeds, the `#path` section the same cross-promo, and the email form feeds the same Sender.net list. Later, Ed sets a Hostinger 301 `wellmate.me/* → https://www.soulcraft.me/#podcast`, updates show notes / Instagram bio / Linktree, and deletes the wellmate Amplify app. Nothing on this site may hard-depend on wellmate.me being up except the contact email, which is replaced once `eduardo@soulcraft.me` exists (checklist).
 
-## 10. Out of scope tonight (Ed's morning checklist — `night-shift:skip` issues)
+## 10. Out of scope tonight (Ed's morning checklist, `night-shift:skip` issues)
 
 Stripe Payment Link · TidyCal booking page · Sender.net group decision · Lambda deploy + Function URL CORS · Amplify app + custom domain · Hostinger DNS for apex and `www` (the `consulting.`, `path.`, `reels.` subdomains point at the Lightsail box and must not be touched) · `eduardo@soulcraft.me` mailbox · a Soulcraft line in wellmate.me's host section.

@@ -3,7 +3,7 @@ name: night-shift
 description: Unattended overnight build of soulcraft.me from the GitHub issue queue. Read this first, then docs/REQUIREMENTS.md, docs/BRAND.md, docs/CONTENT.md.
 ---
 
-# Night shift — soulcraft-site
+# Night shift, soulcraft-site
 
 You are building a small static website unattended. Ed reviews in the morning. Work the queue in order, ship each issue as a merged PR, leave one report issue.
 

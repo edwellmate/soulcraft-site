@@ -1,4 +1,4 @@
-/* soulcraft.me — v1 "Eucalyptus & dusty rose" (docs/BRAND.md) */
+/* soulcraft.me, v1 "Eucalyptus & dusty rose" (docs/BRAND.md) */
 
 :root{
   --euc:        #4E7D7A;  /* primary: rules, icons, numerals, arcs */
@@ -71,7 +71,7 @@ a:hover{color:var(--ink)}
 @media (min-width:860px){.grid--3{grid-template-columns:repeat(3,1fr)}}
 @media (min-width:1080px){.grid--4{grid-template-columns:repeat(4,1fr)}}
 
-/* eyebrow — Karla 600, 22 px rule before (family trait) */
+/* eyebrow: Karla 600, 22 px rule before (family trait) */
 .eyebrow{
   display:flex;align-items:center;gap:.6rem;margin:0 0 .9rem;
   font-family:var(--body);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
@@ -229,13 +229,16 @@ html{scroll-padding-top:72px}
 .step p{margin:0}
 
 /* ---------- ai learning ---------- */
-.wins{list-style:none;padding:0;margin:0;counter-reset:win;gap:1.25rem}
-.win{counter-increment:win;padding-top:1.25rem}
-.win::before{content:counter(win);display:block;font-family:var(--display);font-weight:500;font-variation-settings:"opsz" 72;font-size:2.6rem;line-height:1;color:var(--euc);margin-bottom:.75rem}
-.win h3{margin-bottom:.4rem}
-.win p{margin:0}
-.ai-join{max-width:32rem;margin-top:clamp(2rem,4vw,3rem)}
+.ai__grid{display:grid;gap:2rem;align-items:start}
+.ai__teaser{list-style:none;margin:0;padding:0;counter-reset:win;display:grid;gap:1rem;max-width:30rem}
+.ai__teaser li{counter-increment:win;position:relative;padding-left:3rem;font-size:1.0625rem;min-height:2.4rem;display:flex;align-items:center}
+.ai__teaser li::before{content:counter(win);position:absolute;left:0;top:0;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--sand);color:var(--euc-deep);font-family:var(--display);font-weight:500;font-variation-settings:"opsz" 72;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+.ai-join{padding:1.5rem}
 .ai-join p{margin-bottom:.75rem}
+.consent{flex-basis:100%;display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;color:var(--stone);margin-top:.25rem;cursor:pointer}
+.field .consent input{margin:.2rem 0 0;width:18px;height:18px;min-height:0;flex:0 0 18px;padding:0;border:0;background:transparent;accent-color:var(--euc-deep)}
+.path__phase{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .75rem;max-width:36rem}
+@media (min-width:860px){.ai__grid{grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:3rem}}
 
 /* ---------- podcast ---------- */
 .players{gap:1.5rem;align-items:start}
@@ -279,8 +282,6 @@ html{scroll-padding-top:72px}
 /* ---------- path collective ---------- */
 .path{display:grid;gap:2rem;align-items:center}
 .path__logo{max-width:240px}
-.path h2{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem}
-.path h2 .badge{font-size:.7rem;letter-spacing:.08em;transform:translateY(.15em)}
 .path__text p{max-width:36rem}
 @media (min-width:860px){.path{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:3.5rem}.path__logo{justify-self:center}}
 

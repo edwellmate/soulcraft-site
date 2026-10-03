@@ -1,5 +1,5 @@
 /**
- * Soulcraft — newsletter signup (AWS Lambda + Function URL)
+ * Soulcraft, newsletter signup (AWS Lambda + Function URL)
  * ------------------------------------------------------------------
  * Keeps your Sender.net API token OFF the website. The token lives only as a
  * Lambda environment variable; the browser only ever talks to this function.
@@ -9,15 +9,16 @@
  * with DUPLICATE headers and browsers reject it. So: no CORS headers here.
  *
  * ENV VARS:
- *   SENDER_TOKEN     (required) — your Sender API token
- *   SENDER_GROUP_ID  (optional) — Sender group id; defaults to 'b8zpn3'
+ *   SENDER_TOKEN     (required), your Sender API token
+ *   SENDER_GROUP_AI  (optional), second group for source=ai-learning (drives the guide automation)
+ *   SENDER_GROUP_ID  (optional), Sender group id; defaults to 'b8zpn3'
  *                                 ("Wellmate Podcast")
- *   NOTIFY_TOPIC_ARN (optional) — SNS topic ARN to email you on each signup.
+ *   NOTIFY_TOPIC_ARN (optional), SNS topic ARN to email you on each signup.
  *                                 If unset, no notification is sent (signup
  *                                 still works). Needs sns:Publish on the role.
  *
  * TODO: an email already in Sender is reported as success but is NOT added to
- * SENDER_GROUP_ID — Sender rejects the create call outright. Anyone who signed
+ * SENDER_GROUP_ID, Sender rejects the create call outright. Anyone who signed
  * up before a group change therefore stays in their old group. Fixing this needs
  * Sender's "add subscriber to a group" endpoint (exact path/body unconfirmed).
  */
@@ -58,7 +59,7 @@ exports.handler = async (event) => {
   const body = {
     email,
     trigger_automation: true,
-    groups: [SENDER_GROUP_ID],
+    groups: (source === 'ai-learning' && process.env.SENDER_GROUP_AI) ? [SENDER_GROUP_ID, process.env.SENDER_GROUP_AI] : [SENDER_GROUP_ID],
   };
 
   let r;
@@ -83,14 +84,14 @@ exports.handler = async (event) => {
 
   const text = await r.text().catch(() => '');
 
-  // Log the real Sender response — without this, every failure below is
+  // Log the real Sender response, without this, every failure below is
   // indistinguishable in CloudWatch and the cause has to be guessed at.
   console.error('sender_error', { status: r.status, body: text.slice(0, 500) });
 
   // Treat "already subscribed" as a friendly success (no notification on dupes).
   // NOTE: `already: true` is reported back so a test signup can tell a genuine
   // new subscription from a no-op. Sender does NOT add an existing subscriber to
-  // the group on this path — see TODO at the top of this file.
+  // the group on this path, see TODO at the top of this file.
   if (r.status === 409 || /exist|already/i.test(text)) {
     return json(200, { ok: true, already: true });
   }

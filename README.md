@@ -1,12 +1,12 @@
 # soulcraft-site
 
-Public website for **Soulcraft** — Eduardo Rivas's technology & AI practice for wellness facilitators, community builders and small practices. Static HTML on AWS Amplify at [soulcraft.me](https://www.soulcraft.me).
+Public website for **Soulcraft**, Eduardo Rivas's technology & AI practice for wellness facilitators, community builders and small practices. Static HTML on AWS Amplify at [soulcraft.me](https://www.soulcraft.me).
 
-- `index.html` · `styles.css` · `main.js` · `assets/` — the whole site; no framework, no build step
-- `docs/REQUIREMENTS.md` · `docs/BRAND.md` · `docs/CONTENT.md` — the spec the site is built from
-- `docs/DEPLOY.md` — Amplify, Lambda, Stripe/TidyCal, Hostinger DNS, and the wellmate.me retirement steps
-- `soulcraft-newsletter-lambda.js` — email form backend (Sender.net)
-- `tools/contrast.mjs` · `tools/screenshots.mjs` — the quality checks (see below)
+- `index.html` · `styles.css` · `main.js` · `assets/`, the whole site; no framework, no build step
+- `docs/REQUIREMENTS.md` · `docs/BRAND.md` · `docs/CONTENT.md`, the spec the site is built from
+- `docs/DEPLOY.md`, Amplify, Lambda, Stripe/TidyCal, Hostinger DNS, and the wellmate.me retirement steps
+- `soulcraft-newsletter-lambda.js`, email form backend (Sender.net)
+- `tools/contrast.mjs` · `tools/screenshots.mjs`, the quality checks (see below)
 
 Built overnight by a Claude Code routine from the issue queue; see `.claude/skills/night-shift/SKILL.md`.
 
@@ -26,7 +26,7 @@ var FORM_ENDPOINT = "";   // Lambda Function URL for the email form
 | `TIDYCAL_URL` | `docs/DEPLOY.md` Part E, steps 2–3 | Used as the Stripe success URL; if `STRIPE_LINK` is still empty, booking goes straight here (pay on the day) |
 | `FORM_ENDPOINT` | `docs/DEPLOY.md` Parts B–C (Lambda + Function URL with CORS on the Function URL, none in code) | Both forms `POST` `{ "email", "source" }` as JSON; `source` is `join` or `ai-learning` |
 
-Paste the value between the quotes, commit, push — Amplify redeploys `main` automatically (Part A). Domain and DNS are Part D.
+Paste the value between the quotes, commit, push, Amplify redeploys `main` automatically (Part A). Domain and DNS are Part D.
 
 ## Checks before any merge
 
