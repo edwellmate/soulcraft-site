@@ -5,8 +5,19 @@
 // covering it, so every visit failed the TLS handshake and the redirect to
 // soulcraft.me never fired. DNS looked right. Nothing was watching the handshake.
 //
-// Exit 0 = everything passed. Exit 1 = at least one FAIL, and the night shift
-// opens or updates an issue. WARN never fails the run.
+// Three outcomes, because a cloud session cannot always reach the internet:
+//
+//   exit 0   everything passed.
+//   exit 1   at least one real FAIL. The night shift opens or updates an issue,
+//            and after a merge this is what triggers a revert.
+//   exit 2   inconclusive: something was BLOCKED at the network level, so the
+//            check could not form an opinion. Never revert on this.
+//
+// The BLOCK state exists because the cloud sandbox has an egress allowlist. A
+// host that is not on it refuses CONNECT, which from here is indistinguishable
+// from the site being down unless we look at the error type. On 2026-10-04 the
+// sibling script in app_tech_ops reported 7 of 8 apps down for exactly this
+// reason while everything was healthy (app_tech_ops#58). WARN never fails.
 
 import { resolve4, resolveTxt, resolveCname, resolveMx } from 'node:dns/promises';
 import tls from 'node:tls';
@@ -16,6 +27,27 @@ const results = [];
 const pass = (name, detail = '') => results.push({ level: 'PASS', name, detail });
 const warn = (name, detail) => results.push({ level: 'WARN', name, detail });
 const fail = (name, detail) => results.push({ level: 'FAIL', name, detail });
+const block = (name, detail) => results.push({ level: 'BLOCK', name, detail });
+
+// Is this error the network refusing us, rather than the target misbehaving?
+// Those are opposite conclusions: one means "we cannot see", the other means
+// "it is broken", and only the second justifies a revert.
+const NET_CODES = new Set([
+  'ECONNREFUSED', 'ENOTFOUND', 'EAI_AGAIN', 'ETIMEDOUT', 'ECONNRESET',
+  'EHOSTUNREACH', 'ENETUNREACH', 'EPROTO', 'UND_ERR_CONNECT_TIMEOUT',
+]);
+function isNetwork(e) {
+  if (!e) return false;
+  if (e.name === 'AbortError') return true;                  // our own timeout
+  for (const err of [e, e.cause, e.cause?.cause]) {
+    if (err?.code && NET_CODES.has(err.code)) return true;
+  }
+  // undici wraps a refused CONNECT as a bare "fetch failed" with no code.
+  return e.message === 'fetch failed' && !e.cause?.code;
+}
+// Record an exception as BLOCK or FAIL depending on which it actually was.
+const net = (name, e, suffix = '') =>
+  (isNetwork(e) ? block : fail)(name, `${e.message}${e.code ? ` (${e.code})` : ''}${suffix}`);
 
 const TIMEOUT = 20000;
 
@@ -46,8 +78,8 @@ function certNames(host) {
         res({ ok: true, names: alt, subject: cert.subject?.CN || '' });
       }
     );
-    sock.on('error', (e) => res({ ok: false, error: e.message }));
-    sock.on('timeout', () => { sock.destroy(); res({ ok: false, error: 'timeout' }); });
+    sock.on('error', (e) => res({ ok: false, error: e.message, code: e.code }));
+    sock.on('timeout', () => { sock.destroy(); res({ ok: false, error: 'timeout', code: 'ETIMEDOUT' }); });
   });
 }
 
@@ -66,7 +98,7 @@ for (const url of ['https://www.soulcraft.me/', 'https://www.soulcraft.me/thanks
     if (r.status === 200) pass(`GET ${url}`, '200');
     else fail(`GET ${url}`, `expected 200, got ${r.status}`);
   } catch (e) {
-    fail(`GET ${url}`, e.message);
+    net(`GET ${url}`, e);
   }
 }
 
@@ -78,14 +110,14 @@ try {
     pass('GET https://soulcraft.me/', `${r.status} to ${r.headers.get('location')}`);
   } else fail('GET https://soulcraft.me/', `expected 200 or a redirect, got ${r.status}`);
 } catch (e) {
-  fail('GET https://soulcraft.me/', e.message);
+  net('GET https://soulcraft.me/', e);
 }
 
 // ------------------------------------------------- certificates, both domains
 
 for (const host of ['www.soulcraft.me', 'soulcraft.me']) {
   const c = await certNames(host);
-  if (!c.ok) fail(`TLS ${host}`, c.error);
+  if (!c.ok) net(`TLS ${host}`, Object.assign(new Error(c.error), { code: c.code }));
   else if (covers(c.names, host)) pass(`TLS ${host}`, c.names.join(', '));
   else fail(`TLS ${host}`, `certificate does not cover it. SANs: ${c.names.join(', ') || '(none)'}`);
 }
@@ -102,7 +134,8 @@ for (const host of ['www.soulcraft.me', 'soulcraft.me']) {
       const r = await http(`https://${host}/`);
       const loc = r.headers.get('location') || '';
       if (loc.includes('soulcraft.me')) pass(`${host} redirect`, `${r.status} to ${loc}`);
-      else warn(`${host} redirect`, `cert is fixed but the redirect goes to "${loc}" (issue #31)`);
+      else if (r.status === 200) warn(`${host} redirect`, 'certificate is fixed, but www still serves the old wellmate site instead of redirecting (issue #31)');
+      else warn(`${host} redirect`, `certificate is fixed, but the redirect goes to "${loc}" (issue #31)`);
     } catch (e) {
       warn(`${host} redirect`, `${e.message} (issue #31)`);
     }
@@ -126,7 +159,8 @@ try {
     if (count > 1) fail('soulcraft.me SPF', `${count} SPF records, must be exactly 1`);
   }
 } catch (e) {
-  fail('soulcraft.me SPF', e.message);
+  // ENOTFOUND/ENODATA from a resolver is a real DNS answer; anything else is reachability.
+  (['ENOTFOUND', 'ENODATA'].includes(e.code) ? fail : block)('soulcraft.me SPF', `${e.message} (${e.code})`);
 }
 
 try {
@@ -134,7 +168,7 @@ try {
   if (mx.length) pass('soulcraft.me MX', mx.map((m) => m.exchange).join(', '));
   else fail('soulcraft.me MX', 'no MX records, inbound email is dead');
 } catch (e) {
-  fail('soulcraft.me MX', e.message);
+  (['ENOTFOUND', 'ENODATA'].includes(e.code) ? fail : block)('soulcraft.me MX', `${e.message} (${e.code})`);
 }
 
 try {
@@ -158,9 +192,9 @@ for (const name of ['STRIPE_LINK', 'BOOKING_URL', 'FORM_ENDPOINT']) {
     const r = await http(url);
     if (r.status < 400) pass(name, `${r.status}`);
     else if (name === 'FORM_ENDPOINT' && r.status === 405) pass(name, '405 to GET, which is correct for a POST-only endpoint');
-    else fail(name, `${r.status} — the live funnel is broken at this step`);
+    else fail(name, `${r.status}, so the live funnel is broken at this step`);
   } catch (e) {
-    fail(name, e.message);
+    net(name, e);
   }
 }
 
@@ -169,9 +203,9 @@ for (const path of ['assets/logo-email.png', 'assets/logo-email-on-dark.png']) {
   try {
     const r = await http(`https://www.soulcraft.me/${path}`);
     if (r.status === 200) pass(`asset ${path}`, '200');
-    else fail(`asset ${path}`, `${r.status} — already-sent emails show a broken image`);
+    else fail(`asset ${path}`, `${r.status}, so already-sent emails show a broken image`);
   } catch (e) {
-    fail(`asset ${path}`, e.message);
+    net(`asset ${path}`, e);
   }
 }
 
@@ -179,7 +213,7 @@ for (const path of ['assets/logo-email.png', 'assets/logo-email-on-dark.png']) {
 
 try {
   const html = await (await http('https://www.soulcraft.me/')).text();
-  if (html.includes('—')) fail('no em dashes', 'the live page contains the em dash character');
+  if (html.includes('\u2014')) fail('no em dashes', 'the live page contains the forbidden dash character');
   else pass('no em dashes', 'clean');
 } catch (e) {
   warn('no em dashes', e.message);
@@ -193,5 +227,19 @@ for (const r of results) {
 }
 const fails = results.filter((r) => r.level === 'FAIL');
 const warns = results.filter((r) => r.level === 'WARN');
-console.log(`\n${results.length - fails.length - warns.length} passed, ${warns.length} warned, ${fails.length} failed`);
-process.exit(fails.length ? 1 : 0);
+const blocks = results.filter((r) => r.level === 'BLOCK');
+const passes = results.length - fails.length - warns.length - blocks.length;
+console.log(`\n${passes} passed, ${warns.length} warned, ${blocks.length} blocked, ${fails.length} failed`);
+
+if (fails.length) {
+  console.log('RESULT: FAILED. After a merge, revert it.');
+  process.exit(1);
+}
+if (blocks.length) {
+  console.log('RESULT: INCONCLUSIVE. These could not be reached at all:');
+  for (const b of blocks) console.log(`  - ${b.name}`);
+  console.log('Add the hosts to the cloud environment allowlist. Do not revert on this.');
+  process.exit(2);
+}
+console.log('RESULT: all checks passed.');
+process.exit(0);

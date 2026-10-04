@@ -1,5 +1,5 @@
 // WCAG 2.1 contrast check for the Soulcraft token pairs (BRAND.md §1).
-// Usage: node tools/contrast.mjs   — prints a table, exits 1 if any pair fails.
+// Usage: node tools/contrast.mjs   (prints a table, exits 1 if any pair fails)
 import { readFileSync } from "node:fs";
 
 const css = readFileSync(new URL("../styles.css", import.meta.url), "utf8");
