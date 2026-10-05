@@ -47,7 +47,7 @@ Dark mode: not required for v1. Set `color-scheme: light`.
 
 ## 3. Shape, surface, motion
 
-- Buttons: **pill** (`border-radius: 999px`), solid euc with bone text; hover euc-deep + `translateY(-2px)`; focus ring 3 px rose at 2 px offset. Secondary: 1.5 px ink outline, transparent fill. (Pills are the family trait shared with Wellmate; keep them.)
+- Buttons: **pill** (`border-radius: 999px`), solid euc with bone text; hover euc-deep + `translateY(-2px)`; focus ring 3 px rose at 2 px offset. Secondary: 1.5 px ink outline, transparent fill. Rose variant (`.btn--rose`, rose fill, ink text, 5.9:1) for the hero's second call to action only. (Pills are the family trait shared with Wellmate; keep them.)
 - Cards: 14 px radius, `--white` on pebble/sand or `--sand` on bone, 1 px `--hair` border, shadow no heavier than `0 1px 0 var(--hair)`.
 - Inputs: 10 px radius, sand fill, hair border, euc focus ring.
 - Texture: none, this palette wants clean, soft surfaces. No grain, no gradients except a very subtle night → night-deep on the footer.
@@ -61,8 +61,10 @@ Dark mode: not required for v1. Set `color-scheme: light`.
 
 ## 5. Logo, wordmark only (chosen: "roman + italic halves")
 
-- **No pictorial mark.** The logo is the word set in Literata 500: `Soul` in roman + `craft` in italic, no space, no colour change, ink on light / bone on dark. Letter-spacing −0.01em. Example: <span>Soul<em>craft</em></span>.
-- Provide `assets/logo.svg` (text converted to outlines so it does not depend on the webfont; render it with Playwright/resvg from an HTML snippet using the loaded Google Font, or trace via `opentype.js`, commit the outlined SVG), plus `assets/logo-on-dark.svg`.
+- **No pictorial mark.** The logo is the word set in Literata 500: `Soul` in roman + `Craft` in italic with a capital C (Ed, 2026-10-05), no space, no colour change, ink on light / bone on dark. Letter-spacing −0.01em. Example: <span>Soul<em>Craft</em></span>. The written name in prose stays "Soulcraft".
+- Provide `assets/logo.svg` (text converted to outlines so it does not depend on the webfont), plus `assets/logo-on-dark.svg`.
+- **Exact settings, measured from the shipped asset on 2026-10-05 and used to regenerate it:** Literata variable, **weight 400**, **opsz 36**, tracking **-0.02em**. (This paragraph previously said 500 and -0.01em; the asset never matched that, so the asset won.) Regenerate with `fontkit`: lay out `Soul` in the roman and `Craft` in the italic, advance by `xAdvance + (-0.02 x unitsPerEm)` between glyphs, union the glyph paths, and wrap in `<g transform="scale(1,-1)">` with `viewBox="0 -maxY width height"` taken from the real ink box. Resulting ratio 4.262:1.
+- The wordmark also exists as `assets/logo-email.png` and `assets/logo-email-on-dark.png` (both **exactly 680x168**, the wordmark fitted inside with padding). Keep that canvas size: emails already in inboxes hardcode `width="150" height="37"` and `width="116" height="29"`, so changing the aspect ratio would squash the logo in mail already sent.
 - **Favicon / app icon** (a wordmark does not read at 16 px): a rounded square (radius 22%) filled euc, with a single Literata italic lowercase **s** in bone centred, optically sized to ~62% of the tile. `assets/favicon.svg`, `assets/apple-touch-icon.png` (180 px), and `assets/og.png` (1200×630: wordmark large on bone, tagline in Karla beneath, a rose rule between them, the favicon tile small in a corner).
 - Nav uses the wordmark at ~24 px cap height; footer the on-dark version.
 

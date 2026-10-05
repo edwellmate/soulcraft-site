@@ -19,7 +19,7 @@ H1: **Technology that supports the work you actually do.**
 Sub: I help facilitators, community builders and small practices make their tools work for them, starting with one small, useful thing, and growing from there.
 
 Primary CTA (button, scrolls to #quick-win): Start with a Quick-Win Session ↓
-Secondary: Listen to Behind The Practice ↓ (→ #podcast)
+Secondary (a second pill, rose with ink text, beside the first): Listen to Behind The Practice ↓ (→ #podcast)
 
 House rule: never use the em dash character anywhere on the site.
 
@@ -50,6 +50,8 @@ What happens next (three steps under the card):
 1. **Chat**, Book a Quick-Win Session or just say hi. We talk about how things really run.
 2. **Quick win**, You get one small change you can make this month, and a plain note on what's possible later.
 3. **Grow when you're ready**, If and when you want more, we build it in small, affordable steps, on what you already own.
+
+Card footer, full width under both columns (Ed, 2026-10-05): "Not sure yet? Email eduardo@soulcraft.me or message me on Instagram. A message costs nothing." · @eduardo.mexaus
 
 ## Consulting services (`#services`)
 
@@ -88,6 +90,19 @@ If you hold space and care about co-creation, there's a seat here for you.
 - You're up for an honest, unhurried conversation, no script, no selling.
 Reach out at [eduardo@soulcraft.me] or [send me a message on Instagram].
 
+## Path Collective (`#path`)
+
+Eyebrow: Also from this village
+
+H2: Path Collective
+
+Badge: Soft launch running, invite only
+Phase line: The soft launch is already running with our first founding facilitators and ambassadors. Access is by invitation only for now; the waitlist is how you get one. Public launch in Australia early 2027.
+
+P: Soulcraft is where I help you with your tools. Path Collective is where people find you: a curated platform to discover and book trusted wellness events, retreats and facilitators. Our first founding facilitators and ambassadors are joining now for the soft launch; public launch in Australia early 2027.
+
+Link: Join the waitlist →
+
 ## About (`#about`)
 
 Eyebrow: About
@@ -102,19 +117,6 @@ The three hats (each a small card with a link):
 - **Path Collective**, co-founder. A platform to find and book trusted wellness events and facilitators. Soft launching now. → pathcollective.com
 
 Closing line: Different hats, different channels, different tools. *One purpose: to serve.* + Instagram pill @eduardo.mexaus
-
-## Path Collective (`#path`)
-
-Eyebrow: Also from this village
-
-H2: Path Collective
-
-Badge: Soft launch running, invite only
-Phase line: The soft launch is already running with our first founding facilitators and ambassadors. Access is by invitation only for now; the waitlist is how you get one. Public launch in Australia early 2027.
-
-P: Soulcraft is where I help you with your tools. Path Collective is where people find you: a curated platform to discover and book trusted wellness events, retreats and facilitators. Our first founding facilitators and ambassadors are joining now for the soft launch; public launch in Australia early 2027.
-
-Link: Join the waitlist →
 
 ## Stay in touch (`#join`)
 
