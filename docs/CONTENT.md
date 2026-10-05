@@ -30,7 +30,7 @@ Eyebrow: Start here
 
 H2: Start with a Quick-Win Session
 
-Price line: **$149** · 60 minutes · online or in Melbourne
+Price line: **$159** · 60 minutes · online or in Melbourne
 
 Intro: We look at how you actually run your practice, bookings, payments, follow-ups, content, the spreadsheet you're slightly embarrassed about, and find the one change that pays off this month.
 
@@ -39,7 +39,7 @@ You leave with (list):
 - A clear "what I'd do next" if you ever want to go further, no pressure to.
 - An honest answer about whether you need me at all.
 
-Credit line: If we go on to build something together within 30 days, the $149 comes off the first invoice.
+Credit line: If we go on to build something together within 30 days, the $159 comes off the first invoice.
 
 Flow line: Pay, then pick a time that suits you. Sessions run Tuesday to Thursday, 10am to 4pm Melbourne. If none of the times work, email me at eduardo@soulcraft.me and we'll lock one in together.
 
@@ -149,7 +149,7 @@ Pull line: If something is eating your week, hit reply and tell me. I read every
 CTA: Book a Quick-Win Session (→ #quick-win), then "A 60-minute look at how you actually run your practice, and the one change that pays off this month." Sign-off: "With gratitude," / "Eduardo".
 Footer: "You are getting this because you signed up at soulcraft.me. Unsubscribe any time, one click, no questions." The unsubscribe href must be Sender's `{$unsubscribe_link}` tag; `{$unsubscribe}` does not resolve.
 
-**Ed edited this copy directly in Sender on 2026-10-05** (greeting, removing the "$149, Tuesday to Thursday, online" clause, and the sign-off) and the repo was synced to match the delivered email. The repo is the source of truth: make copy changes here first, then paste into Sender, never the other way round, or the next paste reverts them.
+**Ed edited this copy directly in Sender on 2026-10-05** (greeting, removing the "$149, Tuesday to Thursday, online" clause (the price at the time; it is $159 from 2026-10-05), and the sign-off) and the repo was synced to match the delivered email. The repo is the source of truth: make copy changes here first, then paste into Sender, never the other way round, or the next paste reverts them.
 
 ## Footer
 
@@ -163,7 +163,7 @@ Legal: © 2026 Eduardo Rivas · soulcraft.me
 ## Meta
 
 Title: Soulcraft · Technology that supports the work you actually do
-Description: Soulcraft is Eduardo Rivas's tech and AI practice for wellness facilitators, community builders and small practices. Start with a $149 Quick-Win Session.
+Description: Soulcraft is Eduardo Rivas's tech and AI practice for wellness facilitators, community builders and small practices. Start with a $159 Quick-Win Session.
 OG image text: soulcraft, Technology that supports the work you actually do.
 
 

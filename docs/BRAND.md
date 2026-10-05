@@ -76,4 +76,4 @@ Dark mode: not required for v1. Set `color-scheme: light`.
 
 ## 7. Voice (for layout decisions; copy is fixed in CONTENT.md)
 
-Short lines. One idea per card. Numbers are plain (`$149`, `60 min`). Headings are sentences, not titles. The page should feel like a calm person explaining what they do, not a brochure.
+Short lines. One idea per card. Numbers are plain (`$159`, `60 min`). Headings are sentences, not titles. The page should feel like a calm person explaining what they do, not a brochure.

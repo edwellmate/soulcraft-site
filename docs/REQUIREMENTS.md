@@ -5,7 +5,7 @@ Companions: [BRAND.md](BRAND.md) (tokens, type, icons, logo) · [CONTENT.md](CON
 
 ## 1. Purpose
 
-Soulcraft is Ed's technology and AI consultancy for holistic-wellness facilitators, community builders, and small solo businesses that run on a spreadsheet and goodwill. The site has one job: someone who already knows Ed (from the Behind The Practice podcast, Path Collective, a dance floor) lands here, understands in 30 seconds that he is "the tech person who gets this world", and books a **$149 Quick-Win Session** without a second thought.
+Soulcraft is Ed's technology and AI consultancy for holistic-wellness facilitators, community builders, and small solo businesses that run on a spreadsheet and goodwill. The site has one job: someone who already knows Ed (from the Behind The Practice podcast, Path Collective, a dance floor) lands here, understands in 30 seconds that he is "the tech person who gets this world", and books a **$159 Quick-Win Session** without a second thought.
 
 It is **not** a lead-gen funnel for strangers and it does **not** sell the deep assessment (that stays internal). It also becomes the single home for everything Ed does online: wellmate.me will be retired and redirected here (see §9), so the podcast and Path Collective must live on this page as real sections, not links.
 
@@ -16,7 +16,7 @@ Tone: grounded, warm, earthy, wholesome, supportive. Short-term genuinely useful
 - **Static site, no framework, no build step.** Files: `index.html`, `styles.css`, `main.js`, `assets/`. Hosted on AWS Amplify from `main` (see `amplify.yml`). Node is allowed only for dev tooling (Lighthouse, Playwright screenshots, contrast check), never as a runtime dependency.
 - **No base64-inlined photos** (wellmate.me's single file was 1.18 MB because of one portrait). Images are real files under `assets/`; logo and icons are inline or external **SVG**. `assets/portrait.jpg` (750×900) is provided; serve it at ≤ 600 px wide with `width`/`height` attributes and `loading="lazy"`.
 - External resources allowed: Google Fonts (one `<link>`), the three podcast embeds (Spotify, Apple Podcasts, YouTube-nocookie), Stripe Payment Link and Microsoft Bookings as plain links. Nothing else, no analytics tonight.
-- Australian English (`lang="en-AU"`). Prices in AUD, written `$149` (no "AUD" on the page; JSON-LD carries the currency).
+- Australian English (`lang="en-AU"`). Prices in AUD, written `$159` (no "AUD" on the page; JSON-LD carries the currency).
 - Accessibility: WCAG 2.1 AA. Semantic landmarks, one `<h1>`, visible focus rings, `aria-live` on form status, `prefers-reduced-motion` guard for any animation, all images with meaningful `alt`.
 - Performance budget: HTML+CSS+JS ≤ 60 KB gzipped (excluding embeds and the portrait). Embeds use `loading="lazy"`. Lighthouse ≥ 95 on Performance, Accessibility, Best Practices, SEO (mobile preset).
 - Responsive: mobile-first, 16 px side gutters, no horizontal scroll at 360 px, breakpoints roughly 620 / 860 / 1080 px. `--maxw: 1120px`.
@@ -45,14 +45,14 @@ v1.1 (2026-10-03) removed The stance, Work (two stories) and How it works as sta
 - Meta description, OG (`og:type website`, `og:site_name soulcraft.me`, `og:url https://www.soulcraft.me/`, `og:image /assets/og.png` 1200×630 generated in the palette), Twitter `summary_large_image`.
 - `<link rel="canonical" href="https://www.soulcraft.me/">`
 - Favicon: `assets/favicon.svg` + `assets/apple-touch-icon.png` (180 px) from the favicon tile (BRAND.md §5).
-- JSON-LD: one `ProfessionalService` (name Soulcraft, founder Person Eduardo Rivas, areaServed AU, url, sameAs: Instagram, wellmate.me, pathcollective.com) with an `Offer` for the Quick-Win Session (`price 149`, `priceCurrency AUD`). Plus the `PodcastSeries` block ported from wellmate.me's head (lines 20–57 of its `index.html`) with `url` updated to `https://www.soulcraft.me/#podcast`.
+- JSON-LD: one `ProfessionalService` (name Soulcraft, founder Person Eduardo Rivas, areaServed AU, url, sameAs: Instagram, wellmate.me, pathcollective.com) with an `Offer` for the Quick-Win Session (`price 159`, `priceCurrency AUD`). Plus the `PodcastSeries` block ported from wellmate.me's head (lines 20–57 of its `index.html`) with `url` updated to `https://www.soulcraft.me/#podcast`.
 
 ## 5. Booking flow (Quick-Win Session)
 
 `main.js` starts with three constants, empty by default; Ed fills them the morning after:
 
 ```js
-var STRIPE_LINK   = "";   // Stripe Payment Link, $149 AUD, success URL = BOOKING_URL
+var STRIPE_LINK   = "";   // Stripe Payment Link, $159 AUD, success URL = BOOKING_URL
 var BOOKING_URL   = "";   // Microsoft Bookings public page for the 60-min session
 var FORM_ENDPOINT = "";   // Lambda Function URL for the email form
 ```

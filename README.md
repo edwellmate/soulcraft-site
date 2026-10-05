@@ -15,7 +15,7 @@ Built overnight by a Claude Code routine from the issue queue; see `.claude/skil
 Three public URLs live at the top of `main.js` and ship empty. Until they are filled, every "Book" button and both email forms fall back to a prefilled `mailto:eduardo@soulcraft.me`.
 
 ```js
-var STRIPE_LINK   = "";   // Stripe Payment Link, $149 AUD, success URL = BOOKING_URL
+var STRIPE_LINK   = "";   // Stripe Payment Link, $159 AUD, success URL = BOOKING_URL
 var BOOKING_URL   = "";   // Microsoft Bookings public page for the 60-min session
 var FORM_ENDPOINT = "";   // Lambda Function URL for the email form
 ```

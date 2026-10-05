@@ -19,7 +19,7 @@ Everything else below is this repo's law.
 takes money.**
 
 The one-off build of 2026-10-03 ran against a repo nothing served. That is over. Amplify app
-`d2m4x7eeej9yo3` builds `main` on push, and the page carries a live A$149 payment link. A broken
+`d2m4x7eeej9yo3` builds `main` on push, and the page carries a live A$159 payment link. A broken
 merge at 03:00 is a broken shopfront until Ed wakes up.
 
 So, in this repo only:
@@ -86,7 +86,7 @@ This is the normal case now, not the exception. The site is built; most open iss
      tonight.
    - A FAIL that an existing open issue already covers: comment the output on that issue. Do not
      open a second one.
-2. **Check nothing has drifted** from `docs/CONTENT.md` to `index.html`: prices other than $149, a
+2. **Check nothing has drifted** from `docs/CONTENT.md` to `index.html`: prices other than $159, a
    client named, the word "assessment", or the em dash character anywhere. Each of those is a rule,
    not a preference. If you find one, fix it, that is Tier A, and note it in the report.
 3. **Fall through to the next repo** in the registry if there is over an hour left.

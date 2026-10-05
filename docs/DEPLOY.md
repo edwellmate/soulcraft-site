@@ -141,7 +141,7 @@ edited in Hostinger's **DNS Zone**, NOT Route 53. The apex currently shows Hosti
 1. **Microsoft Bookings → new service**: "Quick-Win Session", 60 min, online (Teams),
    Monday–Wednesday 10am–4pm Melbourne. Publish the booking page as **public**
    (no Microsoft 365 sign-in) and copy its URL.
-2. **Stripe → Payment Links → New**: product "Quick-Win Session (60 min)", A$149, one-off.
+2. **Stripe → Payment Links → New**: product "Quick-Win Session (60 min)", A$159, one-off.
    Price is **GST-inclusive** (tax behaviour: inclusive) with a services tax code, so
    registering for GST later doesn't change the price clients see.
    After payment → **Redirect to a URL** → the Bookings page from step 1.
