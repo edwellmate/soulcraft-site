@@ -98,6 +98,32 @@ var FORM_ENDPOINT = "https://opa4vcnq7gnw4dudy2lbhn6rf40tfdfr.lambda-url.ap-sout
     });
   }
 
+  /* ---- podcast embeds: load only when the section is near the viewport ----
+     loading="lazy" on an iframe is distance-based and generous; after the AI learning
+     section was removed (v1.2) the three players sat inside that distance on a phone
+     and loaded before first paint: 22 requests to Spotify, 11 to Apple, Lighthouse 72.
+     Observing #podcast with a 300px margin gives the same "appears as you scroll"
+     behaviour without paying for three players on every visit. */
+  var podcast = document.getElementById("podcast");
+  if (podcast) {
+    var frames = podcast.querySelectorAll("iframe[data-src]");
+    var loadFrames = function () {
+      for (var k = 0; k < frames.length; k++) {
+        if (!frames[k].getAttribute("src")) frames[k].setAttribute("src", frames[k].getAttribute("data-src"));
+      }
+    };
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        for (var e = 0; e < entries.length; e++) {
+          if (entries[e].isIntersecting) { loadFrames(); io.disconnect(); break; }
+        }
+      }, { rootMargin: "300px 0px" });
+      io.observe(podcast);
+    } else {
+      loadFrames();
+    }
+  }
+
   /* ---- mobile nav ---- */
   var nav = document.querySelector(".site-nav");
   var toggle = document.querySelector(".nav-toggle");

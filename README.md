@@ -24,7 +24,7 @@ var FORM_ENDPOINT = "";   // Lambda Function URL for the email form
 |---|---|---|
 | `STRIPE_LINK` | `docs/DEPLOY.md` Part E, step 1 | "Book a Quick-Win Session" goes to Stripe; Stripe's success URL sends them on to Microsoft Bookings |
 | `BOOKING_URL` | `docs/DEPLOY.md` Part E, steps 2–3 | Used as the Stripe success URL; if `STRIPE_LINK` is still empty, booking goes straight here (pay on the day) |
-| `FORM_ENDPOINT` | `docs/DEPLOY.md` Parts B–C (Lambda + Function URL with CORS on the Function URL, none in code) | Both forms `POST` `{ "email", "source" }` as JSON; `source` is `join` or `ai-learning` |
+| `FORM_ENDPOINT` | `docs/DEPLOY.md` Parts B–C (Lambda + Function URL with CORS on the Function URL, none in code) | The signup form `POST`s `{ "email", "source" }` as JSON; `source` is `join` or `ai-learning` |
 
 Paste the value between the quotes, commit, push, Amplify redeploys `main` automatically (Part A). Domain and DNS are Part D.
 

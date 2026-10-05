@@ -27,11 +27,10 @@ All copy comes from [CONTENT.md](CONTENT.md) verbatim. The agent decides layout 
 
 | # | Section | id | Background | Notes |
 |---|---|---|---|---|
-| 0 | Nav (sticky) |, | bone, hairline | Logo; links Services · AI learning · Podcast · About; CTA "Book a Quick-Win Session" → `#quick-win`. |
-| 1 | Hero | `#top` | bone | H1 + sub + primary CTA + secondary line "Learn AI for your practice ↓" → `#ai-learning`. Arcs decoration ≥ 860 px. |
-| 2 | What I help with | `#services` | night | 4 service cards (white on night); AI-learning card carries the inline email capture. |
+| 0 | Nav (sticky) |, | bone, hairline | Logo; links Consulting · Podcast · Path Collective · About; CTA "Book a Quick-Win Session" → `#quick-win`. |
+| 1 | Hero | `#top` | bone | H1 + sub + primary CTA + secondary line "Listen to Behind The Practice ↓" → `#podcast`. Arcs decoration ≥ 860 px. |
+| 2 | What I help with | `#services` | night | 3 service cards (white on night). The AI-learning card was removed in v1.2 (2026-10-05), see CONTENT.md. |
 | 3 | Start with a Quick-Win Session | `#quick-win` | sand | The priced card (hours Tue to Thu, 10am to 4pm, reach-out line) + "What happens next" three-step row beneath it. |
-| 3b | Three quick AI wins for practitioners | `#ai-learning` | white | Free resource (three numbered wins) + the `ai-learning` signup form. Hero secondary CTA and nav point here. This is the line of business Ed intends to scale (courses). |
 | 4 | Behind The Practice | `#podcast` | bone | Intro ("This is their microphone."), pull quote, three embeds unchanged, "Come on the show" block with four bullets + reach-out. |
 | 5 | About | `#about` | pebble | Portrait + three hats + Instagram. |
 | 6 | Path Collective | `#path` | white | Logo, badge, two sentences, link. |
@@ -65,7 +64,7 @@ Behaviour of the primary CTA ("Book a Quick-Win Session"):
 
 The secondary link "Not sure yet? Say hi" always goes to the mailto / Instagram DM.
 
-## 6. Email form (Stay in touch + AI-learning card)
+## 6. Email form (Stay in touch)
 
 Same contract as wellmate.me (`docs/_wellmate-DEPLOY.md`, `soulcraft-newsletter-lambda.js`):
 - `<form id="sc-signup">` with one `type="email" name="email" required` input and a button; status `<p id="sc-signup-msg" aria-live="polite">`.
@@ -73,7 +72,7 @@ Same contract as wellmate.me (`docs/_wellmate-DEPLOY.md`, `soulcraft-newsletter-
 - Responses: `{ok:true}` → "You're in. Talk soon." · `{ok:true, already:true}` → "You're already on the list." · anything else → friendly error with the mailto fallback.
 - `FORM_ENDPOINT` empty → open a prefilled mailto instead of failing.
 - **No CORS headers in the Lambda**, the Function URL config owns CORS (duplicate headers break browsers; learned on wellmate.me).
-- The AI-learning card reuses the same JS with a second small form (`id="sc-signup-ai"`, `source:"ai-learning"`).
+- One form only since v1.2 (`id="sc-signup"`, `source:"join"`). On success the browser goes to `welcome.html`; Sender sends the welcome email. The Lambda still accepts `source:"ai-learning"` for a future relaunch.
 
 ## 7. Assets the agent must produce
 
