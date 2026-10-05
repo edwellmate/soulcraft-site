@@ -8,7 +8,7 @@ Contact email for v1: `eduardo@soulcraft.me` · Instagram: `https://www.instagra
 
 ## Nav
 
-Consulting · Podcast · Path Collective · About (no button in the header)
+About · Consulting · Podcast · Path Collective (no button in the header)
 
 ## Hero (`#top`)
 
@@ -52,6 +52,21 @@ What happens next (three steps under the card):
 3. **Grow when you're ready**, If and when you want more, we build it in small, affordable steps, on what you already own.
 
 Card footer, full width under both columns (Ed, 2026-10-05): "Not sure yet? Email eduardo@soulcraft.me or message me on Instagram. A message costs nothing." · @eduardo.mexaus
+
+## About (`#about`)
+
+Eyebrow: About
+
+H2: I'm Eduardo. I build for the people who hold the room.
+
+P1: I grew up in Mexico City and have built my life in Australia for almost a decade, somewhere between technology, conscious community and the dance floor. My days go into building tools for wellness facilitators and community builders. My evenings go into the rooms they hold.
+
+The three hats (each a small card with a link):
+- **Soulcraft**, founder. Where I put 15 years in tech, consulting and product at the service of this world.
+- **Behind The Practice**, host. The podcast where facilitators are heard for the depth of their work. → Listen (`#podcast`)
+- **Path Collective**, co-founder. A platform to find and book trusted wellness events and facilitators. Soft launching now. → pathcollective.com
+
+Closing line: Different hats, different channels, different tools. *One purpose: to serve.* + Instagram pill @eduardo.mexaus
 
 ## Consulting services (`#services`)
 
@@ -102,21 +117,6 @@ Phase line: The soft launch is already running with our first founding facilitat
 P: Soulcraft is where I help you with your tools. Path Collective is where people find you: a curated platform to discover and book trusted wellness events, retreats and facilitators. Our first founding facilitators and ambassadors are joining now for the soft launch; public launch in Australia early 2027.
 
 Link: Join the waitlist →
-
-## About (`#about`)
-
-Eyebrow: About
-
-H2: I'm Eduardo. I build for the people who hold the room.
-
-P1: I grew up in Mexico City and have built my life in Australia for almost a decade, somewhere between technology, conscious community and the dance floor. My days go into building tools for wellness facilitators and community builders. My evenings go into the rooms they hold.
-
-The three hats (each a small card with a link):
-- **Soulcraft**, founder. Where I put 15 years in tech, consulting and product at the service of this world.
-- **Behind The Practice**, host. The podcast where facilitators are heard for the depth of their work. → Listen (`#podcast`)
-- **Path Collective**, co-founder. A platform to find and book trusted wellness events and facilitators. Soft launching now. → pathcollective.com
-
-Closing line: Different hats, different channels, different tools. *One purpose: to serve.* + Instagram pill @eduardo.mexaus
 
 ## Stay in touch (`#join`)
 

@@ -27,13 +27,13 @@ All copy comes from [CONTENT.md](CONTENT.md) verbatim. The agent decides layout 
 
 | # | Section | id | Background | Notes |
 |---|---|---|---|---|
-| 0 | Nav (sticky) |, | bone, hairline | Logo; links Consulting · Podcast · Path Collective · About; CTA "Book a Quick-Win Session" → `#quick-win`. |
+| 0 | Nav (sticky) |, | bone, hairline | Logo; links About · Consulting · Podcast · Path Collective; CTA "Book a Quick-Win Session" → `#quick-win`. |
 | 1 | Hero | `#top` | bone | H1 + sub + two pills side by side: primary (euc) "Start with a Quick-Win Session ↓" → `#quick-win`, secondary (rose, ink text) "Listen to Behind The Practice ↓" → `#podcast`. Arcs decoration ≥ 860 px. |
+| 1b | About | `#about` | pebble | Portrait + three hats + Instagram. **Second section, right after the hero (Ed, 2026-10-05):** its three hats link to `#services`, `#podcast` and `#path`, so placed here they read as a map of the page. Lower down the same links point backwards at sections already passed. |
 | 2 | What I help with | `#services` | night | 3 service cards (white on night). The AI-learning card was removed in v1.2 (2026-10-05), see CONTENT.md. |
 | 3 | Start with a Quick-Win Session | `#quick-win` | sand | The priced card (hours Tue to Thu, 10am to 4pm, reach-out line) + "What happens next" three-step row beneath it. |
 | 4 | Behind The Practice | `#podcast` | bone | Intro ("This is their microphone."), pull quote, three embeds unchanged, "Come on the show" block with four bullets + reach-out. |
 | 5 | Path Collective | `#path` | white | Logo, badge, two sentences, link. |
-| 6 | About | `#about` | pebble | Portrait + three hats + Instagram. Last content section, matching the nav order (Ed, 2026-10-05). |
 | 7 | Stay close to the work | `#join` | sand | Email form + "Unsubscribe anytime." |
 |, | Footer |, | night-deep | Soulcraft (Services · Book) · Podcast · Elsewhere (Path Collective · Instagram) · Contact. Legal: © 2026 Eduardo Rivas · soulcraft.me |
 
