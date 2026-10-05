@@ -143,10 +143,13 @@ Then the "Something to listen to" block from thanks.html, eyebrow "Start here".
 
 Subject: Welcome to Soulcraft · Preheader: One email now and then. Here is what to expect.
 Eyebrow: Welcome · H1: **You're in. Thank you.**
-Intro: Thanks for leaving your email. Here is the deal: one email now and then, never more. When there is a new episode of Behind The Practice, a quick win worth sharing, or news from Path Collective, you will hear about it. When there isn't, you won't hear from me.
+Greeting: Hey, · Intro: Thanks for leaving your email. Here is the deal: one email now and then, never more. When there is a new episode of Behind The Practice, a quick win worth sharing, or news from Path Collective, you will hear about it. When there isn't, you won't hear from me.
 Three cards (not numbered, they are not a sequence): **Behind The Practice** · **Quick wins** · **Path Collective** (copy in `email/welcome.html`).
 Pull line: If something is eating your week, hit reply and tell me. I read every one.
-CTA: Book a Quick-Win Session (→ #quick-win) with the $149 line. Sign-off: Eduardo.
+CTA: Book a Quick-Win Session (→ #quick-win), then "A 60-minute look at how you actually run your practice, and the one change that pays off this month." Sign-off: "With gratitude," / "Eduardo".
+Footer: "You are getting this because you signed up at soulcraft.me. Unsubscribe any time, one click, no questions." The unsubscribe href must be Sender's `{$unsubscribe_link}` tag; `{$unsubscribe}` does not resolve.
+
+**Ed edited this copy directly in Sender on 2026-10-05** (greeting, removing the "$149, Tuesday to Thursday, online" clause, and the sign-off) and the repo was synced to match the delivered email. The repo is the source of truth: make copy changes here first, then paste into Sender, never the other way round, or the next paste reverts them.
 
 ## Footer
 
