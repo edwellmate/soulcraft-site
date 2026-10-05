@@ -23,7 +23,7 @@ var FORM_ENDPOINT = "https://opa4vcnq7gnw4dudy2lbhn6rf40tfdfr.lambda-url.ap-sout
     });
   }
 
-  /* ---- email forms: #sc-signup (join) + #sc-signup-ai (ai-learning) (REQUIREMENTS §6) ---- */
+  /* ---- email form: #sc-signup (join); success goes to welcome.html (REQUIREMENTS §6) ---- */
   var MSG_OK = "You\u2019re in. Talk soon.";
   var MSG_ALREADY = "You\u2019re already on the list.";
   var MSG_ERR = "That didn\u2019t go through. Email me instead at ";
@@ -74,8 +74,12 @@ var FORM_ENDPOINT = "https://opa4vcnq7gnw4dudy2lbhn6rf40tfdfr.lambda-url.ap-sout
       return r.json().then(function (data) { return { ok: r.ok, data: data }; });
     }).then(function (res) {
       if (res.ok && res.data && res.data.ok) {
-        setMsg(msg, res.data.already ? MSG_ALREADY : MSG_OK);
-        if (!res.data.already) form.reset();
+        if (res.data.already) {
+          setMsg(msg, MSG_ALREADY);
+        } else {
+          form.reset();
+          window.location.href = "welcome.html";   // the thank-you page; the welcome email comes from Sender
+        }
       } else {
         setMsg(msg, MSG_ERR, true);
       }

@@ -8,7 +8,7 @@ Contact email for v1: `eduardo@soulcraft.me` · Instagram: `https://www.instagra
 
 ## Nav
 
-Consulting · AI learning · Podcast · About (no button in the header)
+Consulting · Podcast · Path Collective · About (no button in the header)
 
 ## Hero (`#top`)
 
@@ -19,7 +19,7 @@ H1: **Technology that supports the work you actually do.**
 Sub: I help facilitators, community builders and small practices make their tools work for them, starting with one small, useful thing, and growing from there.
 
 Primary CTA (button, scrolls to #quick-win): Start with a Quick-Win Session ↓
-Secondary: Learn AI for your practice ↓ (→ #ai-learning)
+Secondary: Listen to Behind The Practice ↓ (→ #podcast)
 
 House rule: never use the em dash character anywhere on the site.
 
@@ -67,18 +67,6 @@ The research, updates and admin you do by hand every week. I set up a small AI a
 When something breaks, or you want a small change, you message me and it gets done. A few hours a month, no tickets, no tech-speak. We agree the details once we've met.
 
 (AI learning has its own section; it is no longer a service card.)
-
-## AI learning (`#ai-learning`)
-
-Eyebrow: AI learning
-H2: Three quick AI wins for practitioners
-Intro: Free, and you can do each one this week with tools you already have. The sessions and courses that go deeper are coming, leave your email and you'll hear first.
-
-1. **Session notes → follow-up email**, Record a 60-second voice memo after each session. Let an assistant turn it into a warm follow-up in your own voice. You read it, fix one line, send. Ten minutes a day back.
-2. **One recording → a month of posts**, Take one workshop or podcast recording. Ask for the twelve ideas inside it, then for each as a short post in your tone. Schedule them. Content stops being a second job.
-3. **Your own answers → an enquiry helper**, Paste your last twenty email replies to new enquiries. Ask the assistant to draft answers to the next ones using only those. You stay the voice; it saves the typing.
-
-Form lead: **Want the next ones, and first word on the sessions?** · Button: Keep me posted (source `ai-learning`)
 
 ## Podcast (`#podcast`)
 
@@ -134,15 +122,33 @@ Eyebrow: Stay close to the work
 
 H2: One email now and then
 
-P: New episodes, the occasional quick win worth sharing, and first word on the AI sessions. No noise.
+P: New episodes, the occasional quick win worth sharing, and what's new across Soulcraft and Path Collective. No noise.
 
 Input placeholder: you@example.com · Button: Join
 Note under form: Unsubscribe anytime.
-Messages: success "You're in. Talk soon." · already "You're already on the list." · error "That didn't go through, email me instead at eduardo@soulcraft.me."
+On success the page goes to `welcome.html` (the thank-you page below); Sender sends the welcome email. Messages: already "You're already on the list." · error "That didn't go through, email me instead at eduardo@soulcraft.me."
+
+## Welcome page (`welcome.html`, shown after signing up)
+
+Eyebrow: You're in
+H1: **Thank you. That's all it takes.**
+Lede: One email now and then, never more than that. New episodes of Behind The Practice, the occasional quick win worth sharing, and what's new across Soulcraft and Path Collective.
+P: A short welcome is on its way to your inbox. If it isn't there in a few minutes, check the spam folder once, then write to me and I'll sort it.
+Card "While you're here": Listen to the latest episode → (#podcast) · See what a Quick-Win Session is → (#quick-win) · Meet Path Collective → (#path)
+Then the "Something to listen to" block from thanks.html, eyebrow "Start here".
+
+## Welcome email (sent by Sender when someone joins the list)
+
+Subject: Welcome to Soulcraft · Preheader: One email now and then. Here is what to expect.
+Eyebrow: Welcome · H1: **You're in. Thank you.**
+Intro: Thanks for leaving your email. Here is the deal: one email now and then, never more. When there is a new episode of Behind The Practice, a quick win worth sharing, or news from Path Collective, you will hear about it. When there isn't, you won't hear from me.
+Three cards (not numbered, they are not a sequence): **Behind The Practice** · **Quick wins** · **Path Collective** (copy in `email/welcome.html`).
+Pull line: If something is eating your week, hit reply and tell me. I read every one.
+CTA: Book a Quick-Win Session (→ #quick-win) with the $149 line. Sign-off: Eduardo.
 
 ## Footer
 
-Column Consulting · Soulcraft: Book a Quick-Win Session · Consulting · AI learning
+Column Consulting · Soulcraft: Book a Quick-Win Session · Consulting
 Column Podcast: Spotify · Apple Podcasts · YouTube
 Column Elsewhere: Path Collective (pathcollective.com) · Instagram
 Column Contact: eduardo@soulcraft.me · Melbourne, Australia
@@ -204,3 +210,19 @@ Delivered by the Sender automation for the `ai-learning` group. Draft:
 1. **Session notes into a follow-up email.** Record a 60-second voice memo after each session. Let an assistant turn it into a warm follow-up in your own voice. You read it, fix one line, send. Ten minutes a day back.
 2. **One recording into a month of posts.** Take one workshop or podcast recording. Ask for the twelve ideas inside it, then for each one a short post in your tone. Schedule them. Content stops being a second job.
 3. **Your own replies into an enquiry helper.** Paste your last twenty email replies to new enquiries. Ask the assistant to draft answers to the next ones using only those. You stay the voice; it saves the typing.
+
+## Removed in v1.2 (2026-10-05), parked for relaunch
+
+Ed: hide AI learning until the sessions and courses actually exist; the list is now one generic Soulcraft list with a welcome email, no freebie. The Lambda still routes `source=ai-learning` to a second Sender group, which nothing sends any more.
+
+## AI learning (`#ai-learning`)
+
+Eyebrow: AI learning
+H2: Three quick AI wins for practitioners
+Intro: Free, and you can do each one this week with tools you already have. The sessions and courses that go deeper are coming, leave your email and you'll hear first.
+
+1. **Session notes → follow-up email**, Record a 60-second voice memo after each session. Let an assistant turn it into a warm follow-up in your own voice. You read it, fix one line, send. Ten minutes a day back.
+2. **One recording → a month of posts**, Take one workshop or podcast recording. Ask for the twelve ideas inside it, then for each as a short post in your tone. Schedule them. Content stops being a second job.
+3. **Your own answers → an enquiry helper**, Paste your last twenty email replies to new enquiries. Ask the assistant to draft answers to the next ones using only those. You stay the voice; it saves the typing.
+
+Form lead: **Want the next ones, and first word on the sessions?** · Button: Keep me posted (source `ai-learning`)

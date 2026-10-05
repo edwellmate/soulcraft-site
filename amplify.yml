@@ -9,6 +9,7 @@ frontend:
     files:
       - index.html
       - thanks.html
+      - welcome.html
       - styles.css
       - main.js
       - thanks.js
