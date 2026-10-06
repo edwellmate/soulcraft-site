@@ -35,6 +35,7 @@ const block = (name, detail) => results.push({ level: 'BLOCK', name, detail });
 const NET_CODES = new Set([
   'ECONNREFUSED', 'ENOTFOUND', 'EAI_AGAIN', 'ETIMEDOUT', 'ECONNRESET',
   'EHOSTUNREACH', 'ENETUNREACH', 'EPROTO', 'UND_ERR_CONNECT_TIMEOUT',
+  'EPROXYDENIED',
 ]);
 function isNetwork(e) {
   if (!e) return false;
@@ -56,7 +57,17 @@ async function http(url, { method = 'GET' } = {}) {
   const timer = setTimeout(() => ac.abort(), TIMEOUT);
   try {
     // redirect: manual so a 301 is observable rather than silently followed.
-    return await fetch(url, { method, redirect: 'manual', signal: ac.signal });
+    const r = await fetch(url, { method, redirect: 'manual', signal: ac.signal });
+    // The cloud sandbox's egress proxy answers a host missing from its allowlist with
+    // a 403 of its own, carrying an x-deny-reason header. That is the network refusing
+    // us, not the target answering, so hand it to net() as a network error and it files
+    // as BLOCK. Without this the two funnel hosts off the allowlist read as a broken
+    // funnel (FAIL, exit 1), which after a merge would revert a good change.
+    const deny = r.headers.get('x-deny-reason');
+    if (r.status === 403 && deny) {
+      throw Object.assign(new Error(`proxy refused the host (${deny})`), { code: 'EPROXYDENIED' });
+    }
+    return r;
   } finally {
     clearTimeout(timer);
   }
